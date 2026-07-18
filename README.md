@@ -1,6 +1,6 @@
 # Supreme Cycle & Rickshaw Company
 
-A fast, accessible static website for the Khalilabad bicycle store, ready for GitHub Pages and the custom domain `supremecycle.in`. It includes retail categories, a searchable bicycle-parts catalogue, wholesale/import credentials, and separate retail and wholesale WhatsApp enquiries.
+A fast, accessible static website for the Khalilabad bicycle store, ready for GitHub Pages and the custom domain `supremecycle.in`. It includes retail categories, a searchable bicycle-parts catalogue with line-art product illustrations, wholesale/import credentials (GSTIN and IEC shown in the header), an FAQ with FAQPage structured data, an embedded Google Map, a favicon/manifest set, and separate retail and wholesale WhatsApp enquiries.
 
 ## Local checks
 

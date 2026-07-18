@@ -128,6 +128,14 @@ a {
   text-underline-offset: 3px;
 }
 
+.announcement__ids {
+  color: #ffd9c7;
+}
+
+.announcement__note {
+  color: rgba(255, 250, 240, 0.75);
+}
+
 .site-header {
   position: sticky;
   z-index: 100;
@@ -300,6 +308,7 @@ a {
 .section-heading h2,
 .why h2,
 .story h2,
+.faq h2,
 .enquiry h2,
 .visit h2 {
   margin: 0;
@@ -325,6 +334,13 @@ a {
   color: #52615b;
   font-size: clamp(1.02rem, 1.6vw, 1.18rem);
   line-height: 1.8;
+}
+
+.hero__hindi {
+  margin: 16px 0 0;
+  color: var(--green);
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 .hero__actions {
@@ -376,8 +392,38 @@ a {
   background: var(--white);
 }
 
+.hero__ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero__ids span {
+  display: grid;
+  gap: 2px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.hero__ids small {
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero__ids strong {
+  color: var(--green);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
 .hero__trust {
-  margin-top: 44px;
+  margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
@@ -539,6 +585,7 @@ a {
 .section-heading h2,
 .why h2,
 .story h2,
+.faq h2,
 .enquiry h2,
 .visit h2 {
   font-size: clamp(2.7rem, 5vw, 5rem);
@@ -674,40 +721,25 @@ a {
   color: var(--cream);
 }
 
-.wheel-motif {
+.card-art {
   position: absolute;
   z-index: 0;
-  top: 44px;
-  right: 58px;
-  width: 160px;
-  aspect-ratio: 1;
-  border: 18px double rgba(21, 56, 47, 0.12);
-  border-radius: 50%;
+  top: 24px;
+  right: 22px;
+  width: min(44%, 190px);
+  opacity: 0.16;
 }
 
-.wheel-motif::before,
-.wheel-motif::after,
-.wheel-motif span::before,
-.wheel-motif span::after {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  width: 110%;
-  height: 1px;
-  content: "";
-  background: rgba(21, 56, 47, 0.16);
-  transform: translate(-50%, -50%);
+.card-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.wheel-motif::after {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.wheel-motif span::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.wheel-motif span::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
+.category-card--large .card-art {
+  top: 36px;
+  right: 40px;
+  width: min(50%, 280px);
 }
 
 .stock-note {
@@ -1013,10 +1045,11 @@ a {
 
 .product-card__visual {
   position: relative;
-  min-height: 150px;
+  min-height: 164px;
   display: grid;
   place-items: center;
   overflow: hidden;
+  padding: 20px 0;
   color: var(--cream);
   background: var(--green);
 }
@@ -1063,13 +1096,11 @@ a {
   background: #102d3b;
 }
 
-.product-card__visual > span {
+.product-card__visual > svg {
   position: relative;
   z-index: 1;
-  font-family: var(--serif);
-  font-size: 3.3rem;
-  font-weight: 700;
-  letter-spacing: -0.08em;
+  width: 96px;
+  height: 96px;
 }
 
 .product-card__visual small {
@@ -1386,6 +1417,90 @@ a {
   text-transform: uppercase;
 }
 
+.faq {
+  background: var(--cream);
+}
+
+.faq__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(50px, 8vw, 120px);
+}
+
+.faq__intro > p:not(.eyebrow) {
+  max-width: 440px;
+  margin: 26px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.faq__intro .button {
+  margin-top: 30px;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 23px 0;
+  color: var(--green);
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.42rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  list-style: none;
+  transition: color 180ms ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  flex: 0 0 auto;
+  content: "+";
+  color: var(--orange-dark);
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+  color: var(--orange-dark);
+}
+
+.faq-item p {
+  max-width: 620px;
+  margin: 0;
+  padding: 0 40px 24px 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.faq-item a {
+  color: var(--orange-dark);
+  font-weight: 750;
+  text-underline-offset: 3px;
+}
+
 .enquiry {
   background: #e4ece7;
 }
@@ -1659,6 +1774,22 @@ a {
   white-space: nowrap;
 }
 
+.visit__map {
+  overflow: hidden;
+  margin-top: clamp(46px, 7vw, 72px);
+  border: 8px solid var(--cream);
+  border-radius: var(--radius-md);
+  background: var(--green-2);
+  box-shadow: 0 24px 60px rgba(7, 26, 21, 0.3);
+}
+
+.visit__map iframe {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 42vw, 430px);
+  border: 0;
+}
+
 .site-footer {
   padding: 70px 0 24px;
   color: var(--cream);
@@ -1824,6 +1955,10 @@ a {
 }
 
 @media (max-width: 860px) {
+  .announcement__note {
+    display: none;
+  }
+
   .menu-toggle {
     position: relative;
     z-index: 102;
@@ -1903,9 +2038,14 @@ a {
 
   .why__grid,
   .story__grid,
+  .faq__grid,
   .enquiry__grid,
   .visit__grid {
     grid-template-columns: 1fr;
+  }
+
+  .faq__intro {
+    max-width: 660px;
   }
 
   .wholesale__grid {
@@ -1964,7 +2104,8 @@ a {
     font-size: 0.62rem;
   }
 
-  .announcement__inner a {
+  .announcement__inner a,
+  .announcement__note {
     display: none;
   }
 
@@ -2053,6 +2194,7 @@ a {
   .section-heading h2,
   .why h2,
   .story h2,
+  .faq h2,
   .enquiry h2,
   .visit h2 {
     font-size: clamp(2.65rem, 12vw, 4rem);
@@ -2077,10 +2219,20 @@ a {
     font-size: 8rem;
   }
 
-  .wheel-motif {
-    top: 40px;
-    right: 35px;
-    width: 120px;
+  .card-art {
+    top: 22px;
+    right: 18px;
+    width: min(42%, 150px);
+  }
+
+  .category-card--large .card-art {
+    top: 28px;
+    right: 24px;
+    width: min(48%, 190px);
+  }
+
+  .faq-item p {
+    padding-right: 12px;
   }
 
   .stock-note {
