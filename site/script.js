@@ -2,13 +2,9 @@ const header = document.querySelector("#site-header");
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector("#primary-nav");
 const form = document.querySelector("#enquiry-form");
-const interestField = document.querySelector("#interest");
 const formStatus = document.querySelector("#form-status");
-const productSearch = document.querySelector("#product-search");
-const productFilters = document.querySelectorAll(".product-filter");
-const productCards = document.querySelectorAll("[data-product-card]");
-const productCount = document.querySelector("#product-count");
-const productEmpty = document.querySelector("#product-empty");
+const catalogTabs = [...document.querySelectorAll("[data-catalog-tab]")];
+const catalogPanels = document.querySelectorAll("[data-catalog-panel]");
 
 const closeMenu = () => {
   if (!menuButton || !nav) return;
@@ -57,48 +53,43 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-document.querySelectorAll(".inquiry-trigger").forEach((button) => {
-  button.addEventListener("click", () => {
-    if (interestField) interestField.value = button.dataset.interest || "";
-    document.querySelector("#enquire")?.scrollIntoView({ behavior: "smooth" });
-    window.setTimeout(() => document.querySelector("#name")?.focus(), 500);
-  });
-});
+const activateCatalogTab = (tab) => {
+  const category = tab.dataset.catalogTab;
 
-let activeProductFilter = "all";
-
-const filterProducts = () => {
-  const query = String(productSearch?.value || "").trim().toLowerCase();
-  let visibleCount = 0;
-
-  productCards.forEach((card) => {
-    const categories = String(card.dataset.category || "").split(" ");
-    const searchText = `${card.dataset.search || ""} ${card.textContent || ""}`.toLowerCase();
-    const matchesCategory = activeProductFilter === "all" || categories.includes(activeProductFilter);
-    const matchesSearch = !query || searchText.includes(query);
-    const isVisible = matchesCategory && matchesSearch;
-
-    card.hidden = !isVisible;
-    if (isVisible) visibleCount += 1;
+  catalogTabs.forEach((item) => {
+    const isActive = item === tab;
+    item.classList.toggle("is-active", isActive);
+    item.setAttribute("aria-selected", String(isActive));
+    item.tabIndex = isActive ? 0 : -1;
   });
 
-  if (productCount) productCount.textContent = `${visibleCount} ${visibleCount === 1 ? "product" : "products"}`;
-  if (productEmpty) productEmpty.hidden = visibleCount !== 0;
+  catalogPanels.forEach((panel) => {
+    const isActive = panel.dataset.catalogPanel === category;
+    panel.hidden = !isActive;
+    if (isActive) {
+      window.requestAnimationFrame(() => {
+        panel.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
+      });
+    }
+  });
 };
 
-productFilters.forEach((button) => {
-  button.addEventListener("click", () => {
-    activeProductFilter = button.dataset.filter || "all";
-    productFilters.forEach((filterButton) => {
-      const isActive = filterButton === button;
-      filterButton.classList.toggle("is-active", isActive);
-      filterButton.setAttribute("aria-pressed", String(isActive));
-    });
-    filterProducts();
+catalogTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => activateCatalogTab(tab));
+  tab.addEventListener("keydown", (event) => {
+    let nextIndex = index;
+    if (event.key === "ArrowRight") nextIndex = (index + 1) % catalogTabs.length;
+    else if (event.key === "ArrowLeft") nextIndex = (index - 1 + catalogTabs.length) % catalogTabs.length;
+    else if (event.key === "Home") nextIndex = 0;
+    else if (event.key === "End") nextIndex = catalogTabs.length - 1;
+    else return;
+
+    event.preventDefault();
+    const nextTab = catalogTabs[nextIndex];
+    activateCatalogTab(nextTab);
+    nextTab.focus();
   });
 });
-
-productSearch?.addEventListener("input", filterProducts);
 
 document.querySelectorAll(".product-enquiry").forEach((button) => {
   button.addEventListener("click", () => {
