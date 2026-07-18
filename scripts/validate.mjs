@@ -20,7 +20,16 @@ const requiredFiles = [
   "CNAME",
   "robots.txt",
   "sitemap.xml",
-  ".nojekyll"
+  ".nojekyll",
+  "products/derailleur-cable.jpg",
+  "products/woven-brake-cable.jpg",
+  "products/disc-brake-cable.jpg",
+  "products/inner-wire.jpg",
+  "products/foot-pump-gauge.jpg",
+  "products/dual-cylinder-pump.jpg",
+  "products/cable-caps.jpg",
+  "products/kids-alloy-cycle.jpg",
+  "products/steel-basket.jpg"
 ];
 
 for (const file of requiredFiles) {
@@ -43,6 +52,10 @@ const checks = [
   [html.includes("+917888898988"), "wholesale phone number"],
   [html.includes("09BGTPM2524D1ZA"), "GSTIN"],
   [html.includes('id="product-grid"'), "product catalogue"],
+  [html.includes('id="featured-products"'), "featured products section"],
+  [html.match(/class="product-photo-card reveal"/g)?.length === 9, "9 featured product cards"],
+  [html.match(/src="products\//g)?.length === 9, "9 featured product images"],
+  [html.includes("https://www.ymbicycleparts.com/products.html"), "product image source credit"],
   [html.match(/data-product-card/g)?.length === 12, "12 product cards"],
   [html.match(/data-product-art/g)?.length === 12, "12 product illustrations"],
   [html.match(/data-category-art/g)?.length === 5, "5 category illustrations"],
