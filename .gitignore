@@ -1,0 +1,10 @@
+# Generated build output and local tooling
+dist/
+node_modules/
+.pnpm-store/
+.DS_Store
+npm-debug.log*
+
+# Local editor files
+.idea/
+.vscode/
