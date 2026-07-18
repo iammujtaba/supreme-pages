@@ -35,7 +35,18 @@
   <meta name="twitter:description" content="Bicycles, e-cycles, rickshaws and dependable local service in Khalilabad.">
   <meta name="twitter:image" content="https://supremecycle.in/og.png">
 
-  <script>document.documentElement.classList.add('js')</script>
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      const preferredLanguage = localStorage.getItem('supremePreferredLanguage');
+      document.documentElement.dataset.preferredLanguage = preferredLanguage || 'en';
+      if (!preferredLanguage) document.documentElement.classList.add('language-choice-pending');
+      if (preferredLanguage && preferredLanguage !== 'en') document.documentElement.classList.add('language-loading');
+    } catch (error) {
+      document.documentElement.dataset.preferredLanguage = 'en';
+      document.documentElement.classList.add('language-choice-pending');
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -164,13 +175,38 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="language-gate" id="language-gate" role="dialog" aria-modal="true" aria-labelledby="language-gate-title" aria-describedby="language-gate-description">
+    <div class="language-gate__card">
+      <div class="language-gate__brand" aria-hidden="true">
+        <span>SC</span>
+        <strong>Supreme Cycle</strong>
+      </div>
+      <p class="language-gate__eyebrow" data-gate-i18n="welcome">Welcome</p>
+      <h1 id="language-gate-title" data-gate-i18n="title">Choose your preferred language</h1>
+      <p id="language-gate-description" data-gate-i18n="description">Select a language for products, store information and enquiries.</p>
+
+      <div class="language-options" role="radiogroup" aria-label="Website language">
+        <button class="language-option is-selected" type="button" role="radio" aria-checked="true" data-language-option="en"><strong>English</strong><span>English</span></button>
+        <button class="language-option" type="button" role="radio" aria-checked="false" data-language-option="hi"><strong>हिन्दी</strong><span>Hindi</span></button>
+        <button class="language-option" type="button" role="radio" aria-checked="false" data-language-option="zh"><strong>简体中文</strong><span>Chinese</span></button>
+        <button class="language-option" type="button" role="radio" aria-checked="false" data-language-option="ur"><strong>اردو</strong><span>Urdu</span></button>
+        <button class="language-option" type="button" role="radio" aria-checked="false" data-language-option="te"><strong>తెలుగు</strong><span>Telugu</span></button>
+        <button class="language-option" type="button" role="radio" aria-checked="false" data-language-option="ta"><strong>தமிழ்</strong><span>Tamil</span></button>
+        <button class="language-option" type="button" role="radio" aria-checked="false" data-language-option="kn"><strong>ಕನ್ನಡ</strong><span>Kannada</span></button>
+      </div>
+
+      <button class="button button--primary language-gate__continue" id="language-continue" type="button"><span data-gate-i18n="continue">Continue in English</span> <span aria-hidden="true">→</span></button>
+      <p class="language-gate__note" data-gate-i18n="note">English is the default. You can change this anytime from the menu.</p>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#main-content" data-i18n="skipLink">Skip to main content</a>
 
   <div class="announcement">
     <div class="shell announcement__inner">
       <span class="announcement__ids">GSTIN 09BGTPM2524D1ZA • IEC BGTPM2524D</span>
-      <span class="announcement__note">Khalilabad’s cycle destination since 1999</span>
-      <a href="tel:+919839850588">Call +91 98398 50588</a>
+      <span class="announcement__note" data-i18n="announcementNote">Khalilabad’s cycle destination since 1999</span>
+      <a href="tel:+919839850588"><span data-i18n="call">Call</span> +91 98398 50588</a>
     </div>
   </div>
 
@@ -185,41 +221,54 @@
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-        <span class="sr-only">Open navigation</span>
+        <span class="sr-only" data-i18n="openNavigation">Open navigation</span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </button>
 
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-        <a href="#wholesale">Wholesale</a>
-        <a href="#featured-products">Products</a>
-        <a href="#faq">FAQ</a>
-        <a href="#visit">Visit</a>
-        <a class="nav-cta" href="https://wa.me/919839850588?text=Hello%20Supreme%20Cycle%2C%20I%20would%20like%20to%20check%20product%20availability." target="_blank" rel="noreferrer">WhatsApp us</a>
+        <a href="#wholesale" data-i18n="navWholesale">Wholesale</a>
+        <a href="#featured-products" data-i18n="navProducts">Products</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <a href="#visit" data-i18n="navVisit">Visit</a>
+        <label class="language-switcher" for="language-switcher">
+          <span aria-hidden="true">文</span>
+          <span class="sr-only" data-i18n="languageLabel">Language</span>
+          <select id="language-switcher" aria-label="Language">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="zh">简体中文</option>
+            <option value="ur">اردو</option>
+            <option value="te">తెలుగు</option>
+            <option value="ta">தமிழ்</option>
+            <option value="kn">ಕನ್ನಡ</option>
+          </select>
+        </label>
+        <a class="nav-cta" href="https://wa.me/919839850588?text=Hello%20Supreme%20Cycle%2C%20I%20would%20like%20to%20check%20product%20availability." target="_blank" rel="noreferrer" data-i18n="navWhatsapp">WhatsApp us</a>
       </nav>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <section class="hero" id="top">
       <div class="shell hero__grid">
         <div class="hero__copy reveal">
-          <p class="eyebrow"><span></span> Importer &amp; wholesaler of all bicycles &amp; bicycle parts</p>
-          <h1>The right ride for <em>every road.</em></h1>
-          <p class="hero__lead">From a child’s first cycle to a dependable rickshaw for work, we help Khalilabad choose well, ride safely and keep moving.</p>
-          <p class="hero__hindi" lang="hi">साइकिल • ई-साइकिल • रिक्शा • स्पेयर पार्ट्स — खलीलाबाद में 1999 से आपकी सेवा में।</p>
+          <p class="eyebrow"><span></span> <span data-i18n="heroEyebrow">Importer &amp; wholesaler of all bicycles &amp; bicycle parts</span></p>
+          <h1 data-i18n-html="heroTitle">The right ride for <em>every road.</em></h1>
+          <p class="hero__lead" data-i18n="heroLead">From a child’s first cycle to a dependable rickshaw for work, we help Khalilabad choose well, ride safely and keep moving.</p>
+          <p class="hero__hindi" data-i18n="heroSupportLine">Cycles • E-cycles • Rickshaws • Spare parts — serving Khalilabad since 1999.</p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#featured-products">Browse products <span aria-hidden="true">→</span></a>
-            <a class="button button--ghost" href="tel:+919839850588">Call the store</a>
+            <a class="button button--primary" href="#featured-products"><span data-i18n="browseProducts">Browse products</span> <span aria-hidden="true">→</span></a>
+            <a class="button button--ghost" href="tel:+919839850588" data-i18n="callStore">Call the store</a>
           </div>
           <div class="hero__ids" aria-label="Business registrations">
             <span><small>GSTIN</small><strong>09BGTPM2524D1ZA</strong></span>
-            <span><small>Import licence (IEC)</small><strong>BGTPM2524D</strong></span>
+            <span><small data-i18n="importLicence">Import licence (IEC)</small><strong>BGTPM2524D</strong></span>
           </div>
           <div class="hero__trust" aria-label="Service highlights">
-            <div><strong>25+</strong><span>years serving locally</span></div>
-            <div><strong>6 days</strong><span>open every week</span></div>
-            <div><strong>Same day</strong><span>local delivery available</span></div>
+            <div><strong>25+</strong><span data-i18n="yearsServing">years serving locally</span></div>
+            <div><strong data-i18n="sixDays">6 days</strong><span data-i18n="openEveryWeek">open every week</span></div>
+            <div><strong data-i18n="sameDay">Same day</strong><span data-i18n="localDelivery">local delivery available</span></div>
           </div>
         </div>
 
@@ -229,7 +278,7 @@
           </div>
           <div class="availability-card">
             <span class="availability-card__dot" aria-hidden="true"></span>
-            <p><strong>Need a particular model?</strong><br>Send a photo or model name on WhatsApp.</p>
+            <p><strong data-i18n="needModel">Need a particular model?</strong><br><span data-i18n="sendPhoto">Send a photo or model name on WhatsApp.</span></p>
             <a href="https://wa.me/919839850588?text=Hello%20Supreme%20Cycle%2C%20I%20am%20looking%20for%20a%20specific%20model." target="_blank" rel="noreferrer" aria-label="Ask on WhatsApp">↗</a>
           </div>
         </div>
@@ -238,12 +287,12 @@
 
     <section class="marquee" aria-label="Products and services">
       <div class="marquee__track">
-        <span>Bicycles</span><i aria-hidden="true"></i>
-        <span>Electric cycles</span><i aria-hidden="true"></i>
-        <span>Cycle rickshaws</span><i aria-hidden="true"></i>
-        <span>Kids’ rides</span><i aria-hidden="true"></i>
-        <span>Parts &amp; accessories</span><i aria-hidden="true"></i>
-        <span>Assembly &amp; service</span><i aria-hidden="true"></i>
+        <span data-i18n="marqueeBicycles">Bicycles</span><i aria-hidden="true"></i>
+        <span data-i18n="marqueeElectric">Electric cycles</span><i aria-hidden="true"></i>
+        <span data-i18n="marqueeRickshaws">Cycle rickshaws</span><i aria-hidden="true"></i>
+        <span data-i18n="marqueeKids">Kids’ rides</span><i aria-hidden="true"></i>
+        <span data-i18n="marqueeParts">Parts &amp; accessories</span><i aria-hidden="true"></i>
+        <span data-i18n="marqueeService">Assembly &amp; service</span><i aria-hidden="true"></i>
       </div>
     </section>
 
@@ -254,9 +303,9 @@
         </div>
 
         <div class="wholesale__copy reveal">
-          <p class="eyebrow eyebrow--light"><span></span> Wholesale &amp; import division</p>
-          <h2>Premium bicycle parts at wholesale prices.</h2>
-          <p>We supply genuine bicycle parts to retailers and wholesalers, with imported product lines and delivery available across India.</p>
+          <p class="eyebrow eyebrow--light"><span></span> <span data-i18n="wholesaleEyebrow">Wholesale &amp; import division</span></p>
+          <h2 data-i18n="wholesaleTitle">Premium bicycle parts at wholesale prices.</h2>
+          <p data-i18n="wholesaleDescription">We supply genuine bicycle parts to retailers and wholesalers, with imported product lines and delivery available across India.</p>
 
           <div class="brand-strip" aria-label="Authorized brands">
             <span>Bhogal</span>
@@ -268,19 +317,19 @@
           </div>
 
           <ul class="wholesale-points">
-            <li>Genuine and quality bicycle parts</li>
-            <li>Special supply for bicycle wholesalers</li>
-            <li>All-India delivery available</li>
+            <li data-i18n="wholesalePointOne">Genuine and quality bicycle parts</li>
+            <li data-i18n="wholesalePointTwo">Special supply for bicycle wholesalers</li>
+            <li data-i18n="wholesalePointThree">All-India delivery available</li>
           </ul>
 
           <div class="business-ids">
-            <div><span>Import licence (IEC)</span><strong>BGTPM2524D</strong></div>
+            <div><span data-i18n="importLicence">Import licence (IEC)</span><strong>BGTPM2524D</strong></div>
             <div><span>GSTIN</span><strong>09BGTPM2524D1ZA</strong></div>
           </div>
 
           <div class="wholesale__actions">
-            <a class="button button--orange" href="https://wa.me/917888898988?text=Hello%20Supreme%20Cycle%2C%20I%20want%20to%20enquire%20about%20wholesale%20bicycle%20parts." target="_blank" rel="noreferrer">Wholesale WhatsApp <span aria-hidden="true">↗</span></a>
-            <a class="button button--outline-light" href="tel:+917888898988">Call +91 78888 98988</a>
+            <a class="button button--orange" href="https://wa.me/917888898988?text=Hello%20Supreme%20Cycle%2C%20I%20want%20to%20enquire%20about%20wholesale%20bicycle%20parts." target="_blank" rel="noreferrer"><span data-i18n="wholesaleWhatsapp">Wholesale WhatsApp</span> <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline-light" href="tel:+917888898988"><span data-i18n="call">Call</span> +91 78888 98988</a>
           </div>
         </div>
       </div>
@@ -290,23 +339,23 @@
       <div class="shell">
         <div class="section-heading product-showcase__heading reveal">
           <div>
-            <p class="eyebrow"><span></span> Supplier product range</p>
-            <h2>Explore products by category.</h2>
+            <p class="eyebrow"><span></span> <span data-i18n="catalogEyebrow">Supplier product range</span></p>
+            <h2 data-i18n="catalogTitle">Explore products by category.</h2>
           </div>
-          <p>Choose a category to view selected models. Packing, MOQ, colours and current wholesale prices are confirmed by our sales team.</p>
+          <p data-i18n="catalogDescription">Choose a category to view selected models. Packing, MOQ, colours and current wholesale prices are confirmed by our sales team.</p>
         </div>
 
         <div class="catalog-tabs reveal" role="tablist" aria-label="Product categories">
-          <button class="catalog-tab is-active" id="catalog-tab-cables" type="button" role="tab" aria-selected="true" aria-controls="catalog-panel-cables" tabindex="0" data-catalog-tab="cables">Cables <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-pumps" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-pumps" tabindex="-1" data-catalog-tab="pumps">Pumps <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-saddles" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-saddles" tabindex="-1" data-catalog-tab="saddles">Saddles <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-axles" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-axles" tabindex="-1" data-catalog-tab="axles">Axles &amp; BB <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-pedals" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-pedals" tabindex="-1" data-catalog-tab="pedals">Pedals <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-accessories" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-accessories" tabindex="-1" data-catalog-tab="accessories">Accessories <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-tyres" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-tyres" tabindex="-1" data-catalog-tab="tyres">Tyres <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-tubes" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-tubes" tabindex="-1" data-catalog-tab="tubes">Tubes <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-other" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-other" tabindex="-1" data-catalog-tab="other">Other Parts <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-kids" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-kids" tabindex="-1" data-catalog-tab="kids">Kids Cycles <span>4</span></button>
+          <button class="catalog-tab is-active" id="catalog-tab-cables" type="button" role="tab" aria-selected="true" aria-controls="catalog-panel-cables" tabindex="0" data-catalog-tab="cables"><span data-i18n="tabCables">Cables</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-pumps" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-pumps" tabindex="-1" data-catalog-tab="pumps"><span data-i18n="tabPumps">Pumps</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-saddles" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-saddles" tabindex="-1" data-catalog-tab="saddles"><span data-i18n="tabSaddles">Saddles</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-axles" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-axles" tabindex="-1" data-catalog-tab="axles"><span data-i18n="tabAxles">Axles &amp; BB</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-pedals" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-pedals" tabindex="-1" data-catalog-tab="pedals"><span data-i18n="tabPedals">Pedals</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-accessories" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-accessories" tabindex="-1" data-catalog-tab="accessories"><span data-i18n="tabAccessories">Accessories</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-tyres" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-tyres" tabindex="-1" data-catalog-tab="tyres"><span data-i18n="tabTyres">Tyres</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-tubes" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-tubes" tabindex="-1" data-catalog-tab="tubes"><span data-i18n="tabTubes">Tubes</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-other" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-other" tabindex="-1" data-catalog-tab="other"><span data-i18n="tabOther">Other Parts</span> <span>4</span></button>
+          <button class="catalog-tab" id="catalog-tab-kids" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-kids" tabindex="-1" data-catalog-tab="kids"><span data-i18n="tabKids">Kids Cycles</span> <span>4</span></button>
         </div>
 
         <div class="catalog-panel" id="catalog-panel-cables" role="tabpanel" aria-labelledby="catalog-tab-cables" data-catalog-panel="cables">
@@ -527,32 +576,32 @@
     <section class="section why" id="why-us">
       <div class="shell why__grid">
         <div class="why__intro reveal">
-          <p class="eyebrow eyebrow--light"><span></span> The Supreme difference</p>
-          <h2>Good advice before the sale. Reliable support after it.</h2>
-          <p>Choosing a cycle is personal. We focus on the fit, the use and the budget—not just what is easiest to sell.</p>
-          <a class="button button--light" href="#visit">Plan your visit <span aria-hidden="true">→</span></a>
+          <p class="eyebrow eyebrow--light"><span></span> <span data-i18n="whyEyebrow">The Supreme difference</span></p>
+          <h2 data-i18n="whyTitle">Good advice before the sale. Reliable support after it.</h2>
+          <p data-i18n="whyDescription">Choosing a cycle is personal. We focus on the fit, the use and the budget—not just what is easiest to sell.</p>
+          <a class="button button--light" href="#visit"><span data-i18n="planVisit">Plan your visit</span> <span aria-hidden="true">→</span></a>
         </div>
 
         <div class="benefit-list">
           <article class="benefit reveal">
             <span class="benefit__index">01</span>
             <div>
-              <h3>Choice with guidance</h3>
-              <p>Compare everyday, kids’, electric and utility options with practical help from our team.</p>
+              <h3 data-i18n="benefitOneTitle">Choice with guidance</h3>
+              <p data-i18n="benefitOneDescription">Compare everyday, kids’, electric and utility options with practical help from our team.</p>
             </div>
           </article>
           <article class="benefit reveal">
             <span class="benefit__index">02</span>
             <div>
-              <h3>Assembly &amp; setup</h3>
-              <p>We make sure your ride is assembled, adjusted and ready for the road.</p>
+              <h3 data-i18n="benefitTwoTitle">Assembly &amp; setup</h3>
+              <p data-i18n="benefitTwoDescription">We make sure your ride is assembled, adjusted and ready for the road.</p>
             </div>
           </article>
           <article class="benefit reveal">
             <span class="benefit__index">03</span>
             <div>
-              <h3>Local delivery</h3>
-              <p>Ask about same-day delivery in Khalilabad and nearby areas when stock and distance allow.</p>
+              <h3 data-i18n="benefitThreeTitle">Local delivery</h3>
+              <p data-i18n="benefitThreeDescription">Ask about same-day delivery in Khalilabad and nearby areas when stock and distance allow.</p>
             </div>
           </article>
         </div>
@@ -563,22 +612,22 @@
       <div class="shell story__grid">
         <div class="story__visual reveal" aria-hidden="true">
           <div class="year-card">
-            <span>Serving since</span>
+            <span data-i18n="servingSince">Serving since</span>
             <strong>1999</strong>
             <small>Khalilabad • Uttar Pradesh</small>
           </div>
-          <div class="story__stamp">Local knowledge<br>Long-term trust</div>
+          <div class="story__stamp" data-i18n-html="storyStamp">Local knowledge<br>Long-term trust</div>
         </div>
 
         <div class="story__copy reveal">
-          <p class="eyebrow"><span></span> Our story</p>
-          <h2>Built one rider, one family and one business at a time.</h2>
-          <p>For more than twenty-five years, Supreme Cycle &amp; Rickshaw Company has helped people in and around Khalilabad move through daily life—getting to school, getting to work and building a livelihood.</p>
-          <p>That history still shapes how we work today: listen first, recommend honestly and be there when customers need support.</p>
+          <p class="eyebrow"><span></span> <span data-i18n="storyEyebrow">Our story</span></p>
+          <h2 data-i18n="storyTitle">Built one rider, one family and one business at a time.</h2>
+          <p data-i18n="storyParagraphOne">For more than twenty-five years, Supreme Cycle &amp; Rickshaw Company has helped people in and around Khalilabad move through daily life—getting to school, getting to work and building a livelihood.</p>
+          <p data-i18n="storyParagraphTwo">That history still shapes how we work today: listen first, recommend honestly and be there when customers need support.</p>
           <div class="quote-card">
             <span aria-hidden="true">“</span>
-            <blockquote>This is a very good company. I give full ratings.</blockquote>
-            <cite>— Customer review</cite>
+            <blockquote data-i18n="customerQuote">This is a very good company. I give full ratings.</blockquote>
+            <cite data-i18n="customerReview">— Customer review</cite>
           </div>
         </div>
       </div>
@@ -587,36 +636,36 @@
     <section class="section faq" id="faq">
       <div class="shell faq__grid">
         <div class="faq__intro reveal">
-          <p class="eyebrow"><span></span> Common questions</p>
-          <h2>Answers before you ask.</h2>
-          <p>Everything else is one WhatsApp message away — stock, sizes, prices and delivery.</p>
-          <a class="button button--primary" href="https://wa.me/919839850588?text=Hello%20Supreme%20Cycle%2C%20I%20have%20a%20question." target="_blank" rel="noreferrer">Ask on WhatsApp <span aria-hidden="true">↗</span></a>
+          <p class="eyebrow"><span></span> <span data-i18n="faqEyebrow">Common questions</span></p>
+          <h2 data-i18n="faqTitle">Answers before you ask.</h2>
+          <p data-i18n="faqDescription">Everything else is one WhatsApp message away — stock, sizes, prices and delivery.</p>
+          <a class="button button--primary" href="https://wa.me/919839850588?text=Hello%20Supreme%20Cycle%2C%20I%20have%20a%20question." target="_blank" rel="noreferrer"><span data-i18n="askWhatsapp">Ask on WhatsApp</span> <span aria-hidden="true">↗</span></a>
         </div>
 
         <div class="faq-list reveal">
           <details class="faq-item">
-            <summary>Do you deliver in Khalilabad and nearby areas?</summary>
-            <p>Yes. Same-day local delivery is often possible in and around Khalilabad when stock and distance allow. For wholesale bicycle parts we arrange delivery across India — confirm timing on WhatsApp before you order.</p>
+            <summary data-i18n="faqQuestionOne">Do you deliver in Khalilabad and nearby areas?</summary>
+            <p data-i18n="faqAnswerOne">Yes. Same-day local delivery is often possible in and around Khalilabad when stock and distance allow. For wholesale bicycle parts we arrange delivery across India — confirm timing on WhatsApp before you order.</p>
           </details>
           <details class="faq-item">
-            <summary>Which cycle brands and models do you keep?</summary>
-            <p>Stock changes through the season. Often-requested models include Hercules Storm, SkyIndia Bullet tricycles and Panda kids’ cycles, alongside everyday city and electric cycles. Message us on WhatsApp for today’s models and prices.</p>
+            <summary data-i18n="faqQuestionTwo">Which cycle brands and models do you keep?</summary>
+            <p data-i18n="faqAnswerTwo">Stock changes through the season. Often-requested models include Hercules Storm, SkyIndia Bullet tricycles and Panda kids’ cycles, alongside everyday city and electric cycles. Message us on WhatsApp for today’s models and prices.</p>
           </details>
           <details class="faq-item">
-            <summary>Do you sell bicycle parts in retail as well as wholesale?</summary>
-            <p>Yes. Riders can buy tyres, tubes, locks, pumps and everyday spares at the counter, and retailers or wholesalers can order parts from brands like Bhogal, Masco, Trax, Hatora, Bedrock and Ralco in bulk with GST billing.</p>
+            <summary data-i18n="faqQuestionThree">Do you sell bicycle parts in retail as well as wholesale?</summary>
+            <p data-i18n="faqAnswerThree">Yes. Riders can buy tyres, tubes, locks, pumps and everyday spares at the counter, and retailers or wholesalers can order parts from brands like Bhogal, Masco, Trax, Hatora, Bedrock and Ralco in bulk with GST billing.</p>
           </details>
           <details class="faq-item">
-            <summary>Can I get my cycle assembled or repaired here?</summary>
-            <p>Yes. Every new cycle is assembled and adjusted before handover, and we support regular service and repair work — bring your cycle to the store or call ahead.</p>
+            <summary data-i18n="faqQuestionFour">Can I get my cycle assembled or repaired here?</summary>
+            <p data-i18n="faqAnswerFour">Yes. Every new cycle is assembled and adjusted before handover, and we support regular service and repair work — bring your cycle to the store or call ahead.</p>
           </details>
           <details class="faq-item">
-            <summary>What are the store timings?</summary>
-            <p>We are open 9:00 AM to 7:30 PM every day except Friday, when the store stays closed. On public holidays a quick call before visiting is recommended.</p>
+            <summary data-i18n="faqQuestionFive">What are the store timings?</summary>
+            <p data-i18n="faqAnswerFive">We are open 9:00 AM to 7:30 PM every day except Friday, when the store stays closed. On public holidays a quick call before visiting is recommended.</p>
           </details>
           <details class="faq-item">
-            <summary>How do I place a wholesale order?</summary>
-            <p>Send your parts list with brands and quantities to our wholesale WhatsApp on <a href="https://wa.me/917888898988" target="_blank" rel="noreferrer">+91 78888 98988</a>. The team confirms availability, price and dispatch across India. GST invoice available.</p>
+            <summary data-i18n="faqQuestionSix">How do I place a wholesale order?</summary>
+            <p><span data-i18n="faqAnswerSixBefore">Send your parts list with brands and quantities to our wholesale WhatsApp on</span> <a href="https://wa.me/917888898988" target="_blank" rel="noreferrer">+91 78888 98988</a>. <span data-i18n="faqAnswerSixAfter">The team confirms availability, price and dispatch across India. GST invoice available.</span></p>
           </details>
         </div>
       </div>
@@ -625,40 +674,40 @@
     <section class="section enquiry" id="enquire">
       <div class="shell enquiry__grid">
         <div class="enquiry__copy reveal">
-          <p class="eyebrow"><span></span> Quick enquiry</p>
-          <h2>Tell us what you need. We’ll take it to WhatsApp.</h2>
-          <p>No account, no long form and no waiting for an email. Share a few details and continue the conversation directly with the store.</p>
+          <p class="eyebrow"><span></span> <span data-i18n="enquiryEyebrow">Quick enquiry</span></p>
+          <h2 data-i18n="enquiryTitle">Tell us what you need. We’ll take it to WhatsApp.</h2>
+          <p data-i18n="enquiryDescription">No account, no long form and no waiting for an email. Share a few details and continue the conversation directly with the store.</p>
           <ul class="check-list">
-            <li>Ask about today’s availability</li>
-            <li>Share a product photo or model name</li>
-            <li>Discuss delivery before you visit</li>
+            <li data-i18n="enquiryPointOne">Ask about today’s availability</li>
+            <li data-i18n="enquiryPointTwo">Share a product photo or model name</li>
+            <li data-i18n="enquiryPointThree">Discuss delivery before you visit</li>
           </ul>
         </div>
 
         <form class="enquiry-form reveal" id="enquiry-form">
           <div class="field-row">
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" autocomplete="name" placeholder="How should we address you?" required>
+            <label for="name" data-i18n="nameLabel">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="How should we address you?" data-i18n-placeholder="namePlaceholder" required>
           </div>
           <div class="field-row">
-            <label for="interest">What are you looking for?</label>
+            <label for="interest" data-i18n="interestLabel">What are you looking for?</label>
             <select id="interest" name="interest" required>
-              <option value="">Choose a category</option>
-              <option>City or road bicycle</option>
-              <option>Kids’ cycle or tricycle</option>
-              <option>Electric bicycle</option>
-              <option>Cycle rickshaw</option>
-              <option>Parts or accessories</option>
-              <option>Wholesale bicycle parts</option>
-              <option>Service or repair</option>
+              <option value="" data-i18n="optionChoose">Choose a category</option>
+              <option value="City or road bicycle" data-i18n="optionCity">City or road bicycle</option>
+              <option value="Kids’ cycle or tricycle" data-i18n="optionKids">Kids’ cycle or tricycle</option>
+              <option value="Electric bicycle" data-i18n="optionElectric">Electric bicycle</option>
+              <option value="Cycle rickshaw" data-i18n="optionRickshaw">Cycle rickshaw</option>
+              <option value="Parts or accessories" data-i18n="optionParts">Parts or accessories</option>
+              <option value="Wholesale bicycle parts" data-i18n="optionWholesale">Wholesale bicycle parts</option>
+              <option value="Service or repair" data-i18n="optionService">Service or repair</option>
             </select>
           </div>
           <div class="field-row">
-            <label for="message">Details <span>(optional)</span></label>
-            <textarea id="message" name="message" rows="4" placeholder="Model, wheel size, budget or delivery area"></textarea>
+            <label for="message"><span data-i18n="detailsLabel">Details</span> <span data-i18n="optionalLabel">(optional)</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Model, wheel size, budget or delivery area" data-i18n-placeholder="detailsPlaceholder"></textarea>
           </div>
-          <button class="button button--primary button--wide" type="submit">Continue on WhatsApp <span aria-hidden="true">↗</span></button>
-          <p class="form-note">This opens WhatsApp with your message. Nothing is stored on this website.</p>
+          <button class="button button--primary button--wide" type="submit"><span data-i18n="continueWhatsapp">Continue on WhatsApp</span> <span aria-hidden="true">↗</span></button>
+          <p class="form-note" data-i18n="formNote">This opens WhatsApp with your message. Nothing is stored on this website.</p>
           <p class="form-status" id="form-status" aria-live="polite"></p>
         </form>
       </div>
@@ -667,32 +716,32 @@
     <section class="section visit" id="visit">
       <div class="shell visit__grid">
         <div class="visit__panel reveal">
-          <p class="eyebrow eyebrow--light"><span></span> Visit the store</p>
-          <h2>See the options. Try the fit. Decide with confidence.</h2>
+          <p class="eyebrow eyebrow--light"><span></span> <span data-i18n="visitEyebrow">Visit the store</span></p>
+          <h2 data-i18n="visitTitle">See the options. Try the fit. Decide with confidence.</h2>
           <address>
             Mehdawal Road, Baghauli<br>
             Khalilabad, Uttar Pradesh 272175
           </address>
           <div class="visit__actions">
-            <a class="button button--orange" href="https://www.google.com/maps/search/?api=1&amp;query=Supreme%20Cycle%20and%20Rickshaw%20Company%20Khalilabad" target="_blank" rel="noreferrer">Get directions <span aria-hidden="true">↗</span></a>
-            <a class="button button--outline-light" href="tel:+919839850588">Call before visiting</a>
+            <a class="button button--orange" href="https://www.google.com/maps/search/?api=1&amp;query=Supreme%20Cycle%20and%20Rickshaw%20Company%20Khalilabad" target="_blank" rel="noreferrer"><span data-i18n="getDirections">Get directions</span> <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline-light" href="tel:+919839850588" data-i18n="callBeforeVisit">Call before visiting</a>
           </div>
         </div>
 
         <div class="hours-card reveal">
           <div class="hours-card__top">
-            <span>Store hours</span>
-            <span class="open-status" id="open-status">Checking today’s hours…</span>
+            <span data-i18n="storeHours">Store hours</span>
+            <span class="open-status" id="open-status" data-i18n="checkingHours">Checking today’s hours…</span>
           </div>
           <dl>
-            <div><dt>Monday – Thursday</dt><dd>9:00 AM – 7:30 PM</dd></div>
-            <div><dt>Friday</dt><dd>Closed</dd></div>
-            <div><dt>Saturday – Sunday</dt><dd>9:00 AM – 7:30 PM</dd></div>
+            <div><dt data-i18n="mondayThursday">Monday – Thursday</dt><dd>9:00 AM – 7:30 PM</dd></div>
+            <div><dt data-i18n="friday">Friday</dt><dd data-i18n="closed">Closed</dd></div>
+            <div><dt data-i18n="saturdaySunday">Saturday – Sunday</dt><dd>9:00 AM – 7:30 PM</dd></div>
           </dl>
-          <p>Hours can change on public holidays. A quick call before a long trip is recommended.</p>
+          <p data-i18n="hoursNote">Hours can change on public holidays. A quick call before a long trip is recommended.</p>
           <div class="contact-lines">
-            <a href="tel:+919839850588"><span>Phone</span><strong>+91 98398 50588</strong></a>
-            <a href="mailto:mujtaba.aamir1@gmail.com"><span>Email</span><strong>mujtaba.aamir1@gmail.com</strong></a>
+            <a href="tel:+919839850588"><span data-i18n="phone">Phone</span><strong>+91 98398 50588</strong></a>
+            <a href="mailto:mujtaba.aamir1@gmail.com"><span data-i18n="email">Email</span><strong>mujtaba.aamir1@gmail.com</strong></a>
           </div>
         </div>
       </div>
@@ -717,21 +766,21 @@
           <span class="brand__mark" aria-hidden="true">SC</span>
           <span class="brand__text"><strong>Supreme Cycle</strong><small>&amp; Rickshaw Company</small></span>
         </a>
-        <p>Your trusted local destination for bicycles, electric cycles, rickshaws, parts and everyday riding support.</p>
+        <p data-i18n="footerDescription">Your trusted local destination for bicycles, electric cycles, rickshaws, parts and everyday riding support.</p>
       </div>
       <div class="footer__links">
         <div>
-          <h2>Explore</h2>
-          <a href="#featured-products">Products</a>
-          <a href="#why-us">Why us</a>
-          <a href="#about">Our story</a>
-          <a href="#faq">FAQ</a>
+          <h2 data-i18n="explore">Explore</h2>
+          <a href="#featured-products" data-i18n="navProducts">Products</a>
+          <a href="#why-us" data-i18n="whyUs">Why us</a>
+          <a href="#about" data-i18n="storyEyebrow">Our story</a>
+          <a href="#faq" data-i18n="navFaq">FAQ</a>
         </div>
         <div>
-          <h2>Contact</h2>
-          <a href="tel:+919839850588">Call</a>
+          <h2 data-i18n="contact">Contact</h2>
+          <a href="tel:+919839850588" data-i18n="call">Call</a>
           <a href="https://wa.me/919839850588" target="_blank" rel="noreferrer">WhatsApp</a>
-          <a href="https://wa.me/917888898988" target="_blank" rel="noreferrer">Wholesale: +91 78888 98988</a>
+          <a href="https://wa.me/917888898988" target="_blank" rel="noreferrer"><span data-i18n="navWholesale">Wholesale</span>: +91 78888 98988</a>
           <a href="https://www.facebook.com/supremecycles1" target="_blank" rel="noreferrer">Facebook</a>
         </div>
       </div>
@@ -743,10 +792,11 @@
   </footer>
 
   <div class="mobile-actions" aria-label="Quick contact">
-    <a href="tel:+919839850588">Call store</a>
+    <a href="tel:+919839850588" data-i18n="callStore">Call store</a>
     <a href="https://wa.me/919839850588?text=Hello%20Supreme%20Cycle" target="_blank" rel="noreferrer">WhatsApp</a>
   </div>
 
-  <script src="script.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer onerror="document.documentElement.classList.remove('js', 'language-choice-pending', 'language-loading')"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@ import { access, readFile } from "node:fs/promises";
 import { constants } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import vm from "node:vm";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = path.join(root, "site");
@@ -9,6 +10,7 @@ const requiredFiles = [
   "index.html",
   "styles.css",
   "script.js",
+  "translations.js",
   "og.png",
   "wholesale-parts-banner.png",
   "favicon.ico",
@@ -69,6 +71,22 @@ for (const file of requiredFiles) {
 const html = await readFile(path.join(site, "index.html"), "utf8");
 const css = await readFile(path.join(site, "styles.css"), "utf8");
 const js = await readFile(path.join(site, "script.js"), "utf8");
+const translationsSource = await readFile(path.join(site, "translations.js"), "utf8");
+const translationContext = { window: {} };
+vm.runInNewContext(translationsSource, translationContext);
+const i18n = translationContext.window.SUPREME_I18N;
+const expectedLanguages = ["en", "hi", "zh", "ur", "te", "ta", "kn"];
+const translationKeys = new Set([
+  ...[...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]),
+  ...[...html.matchAll(/data-i18n-html="([^"]+)"/g)].map((match) => match[1]),
+  ...[...html.matchAll(/data-i18n-placeholder="([^"]+)"/g)].map((match) => match[1])
+]);
+const nonEnglishLanguages = expectedLanguages.filter((language) => language !== "en");
+const missingTranslations = nonEnglishLanguages.flatMap((language) =>
+  [...translationKeys]
+    .filter((key) => !i18n?.translations?.[language]?.[key])
+    .map((key) => `${language}.${key}`)
+);
 
 const checks = [
   [html.includes("<title>Supreme Cycle &amp; Rickshaw Company"), "site title"],
@@ -98,10 +116,23 @@ const checks = [
   [html.includes('id="faq"'), "FAQ section"],
   [html.includes("output=embed"), "embedded map"],
   [html.includes('id="enquiry-form"'), "WhatsApp enquiry form"],
+  [html.includes('id="language-gate"'), "first-visit language gate"],
+  [html.includes('id="language-switcher"'), "persistent language switcher"],
+  [html.includes('src="translations.js"'), "translation dictionary script"],
+  [expectedLanguages.every((language) => i18n?.languages?.[language]), "seven supported languages"],
+  [nonEnglishLanguages.every((language) => i18n?.gate?.[language]?.continue), "localized language gate"],
+  [missingTranslations.length === 0, `complete translations${missingTranslations.length ? ` (${missingTranslations.join(", ")})` : ""}`],
+  [i18n?.languages?.ur?.dir === "rtl", "Urdu right-to-left direction"],
+  [css.includes('.eyebrow > span:first-child:not([data-i18n])'), "translated eyebrow text remains visible"],
+  [css.includes('.catalog-tab > span:last-child'), "catalog count badge targets only the count"],
+  [!css.includes(".eyebrow span {"), "no broad eyebrow span styling"],
+  [!css.includes(".catalog-tab span {"), "no broad catalog tab span styling"],
   [css.includes("@media (max-width: 760px)"), "mobile layout"],
   [css.includes("prefers-reduced-motion"), "reduced-motion support"],
   [js.includes("wa.me/917888898988"), "wholesale WhatsApp integration"],
-  [js.includes("activateCatalogTab"), "supplier category tabs"]
+  [js.includes("activateCatalogTab"), "supplier category tabs"],
+  [js.includes("supremePreferredLanguage"), "saved language preference"],
+  [js.includes("messageTemplates"), "localized WhatsApp messages"]
 ];
 
 const failures = checks.filter(([ok]) => !ok).map(([, name]) => name);
