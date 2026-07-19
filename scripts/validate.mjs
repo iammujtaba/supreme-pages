@@ -90,7 +90,7 @@ const missingTranslations = nonEnglishLanguages.flatMap((language) =>
 );
 
 const checks = [
-  [html.includes("<title>Supreme Cycle &amp; Rickshaw Company"), "site title"],
+  [html.includes("<title>Wholesale Bicycle Parts Supplier in India | Supreme Cycle</title>"), "national wholesale site title"],
   [html.includes('href="https://supremecycle.in/"'), "canonical URL"],
   [html.includes("application/ld+json"), "structured data"],
   [html.includes('"FAQPage"'), "FAQ structured data"],
@@ -101,6 +101,12 @@ const checks = [
   [html.includes("+917888898988"), "wholesale phone number"],
   [html.includes("09BGTPM2524D1ZA"), "GSTIN"],
   [html.includes('id="featured-products"'), "featured products section"],
+  [html.includes('id="network"'), "office and dispatch network section"],
+  [html.includes('id="ordering"'), "wholesale ordering section"],
+  [html.includes("Ludhiana, Punjab"), "Ludhiana dispatch warehouse"],
+  [html.includes("Next-day dispatch"), "next-day dispatch promise"],
+  [html.includes('"@type": "Country"') && html.includes('"name": "India"'), "India-wide structured service area"],
+  [html.includes("warehouse address is not published"), "Ludhiana address privacy note"],
   [html.match(/<button class="catalog-tab/g)?.length === 10, "10 product category tabs"],
   [html.match(/role="tabpanel"/g)?.length === 10, "10 product category panels"],
   [html.match(/<article class="product-photo-card/g)?.length === 40, "40 product cards"],
@@ -117,6 +123,11 @@ const checks = [
   [html.includes('id="faq"'), "FAQ section"],
   [html.includes("output=embed"), "embedded map"],
   [html.includes('id="enquiry-form"'), "WhatsApp enquiry form"],
+  [html.includes('name="business"'), "business enquiry field"],
+  [html.includes('name="buyerType"'), "buyer type enquiry field"],
+  [html.includes('name="state"'), "delivery state enquiry field"],
+  [html.includes('name="gstin"'), "GSTIN enquiry field"],
+  [html.includes('name="quantity"'), "quantity enquiry field"],
   [html.includes('id="language-gate"'), "first-visit language gate"],
   [html.includes('id="language-switcher"'), "persistent language switcher"],
   [html.includes('src="translations.js"'), "translation dictionary script"],
@@ -134,6 +145,7 @@ const checks = [
   [js.includes("activateCatalogTab"), "supplier category tabs"],
   [js.includes("supremePreferredLanguage"), "saved language preference"],
   [js.includes("messageTemplates"), "localized WhatsApp messages"],
+  [js.includes('buyerType === "Individual retail customer"'), "B2B and retail enquiry routing"],
   [buildJs.includes('createHash("sha256")'), "content-hashed asset versions"],
   [buildJs.includes('versionedAssets = ["styles.css", "translations.js", "script.js"]'), "critical asset cache busting"]
 ];

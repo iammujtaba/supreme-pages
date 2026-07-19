@@ -74,49 +74,84 @@ const messageTemplates = {
   en: {
     product: (product) => `Hello Supreme Cycle, I want to enquire about ${product}. Please share available brands, sizes, wholesale quantity and current price.`,
     hello: (name) => `Hello Supreme Cycle, my name is ${name}.`,
+    buyer: (buyerType) => `Buyer type: ${buyerType}.`,
+    business: (business) => `Business / firm: ${business}.`,
+    state: (state) => `Delivery state / region: ${state}.`,
+    gst: (gstin) => `GSTIN: ${gstin}.`,
     looking: (interest) => `I am looking for: ${interest}.`,
+    quantity: (quantity) => `Approximate quantity: ${quantity}.`,
     details: (details) => `Details: ${details}`,
     request: "Please share current options and prices."
   },
   hi: {
     product: (product) => `नमस्ते Supreme Cycle, मुझे ${product} के बारे में जानकारी चाहिए। कृपया उपलब्ध ब्रांड, साइज़, थोक मात्रा और मौजूदा कीमत बताएँ।`,
     hello: (name) => `नमस्ते Supreme Cycle, मेरा नाम ${name} है।`,
+    buyer: (buyerType) => `खरीदार का प्रकार: ${buyerType}।`,
+    business: (business) => `व्यवसाय / फर्म: ${business}।`,
+    state: (state) => `डिलीवरी राज्य / क्षेत्र: ${state}।`,
+    gst: (gstin) => `GSTIN: ${gstin}।`,
     looking: (interest) => `मुझे चाहिए: ${interest}।`,
+    quantity: (quantity) => `अनुमानित मात्रा: ${quantity}।`,
     details: (details) => `विवरण: ${details}`,
     request: "कृपया मौजूदा विकल्प और कीमतें बताएँ।"
   },
   zh: {
     product: (product) => `您好 Supreme Cycle，我想咨询 ${product}。请告知可选品牌、尺寸、批发数量和当前价格。`,
     hello: (name) => `您好 Supreme Cycle，我叫${name}。`,
+    buyer: (buyerType) => `买家类型：${buyerType}。`,
+    business: (business) => `企业 / 商号：${business}。`,
+    state: (state) => `配送邦 / 地区：${state}。`,
+    gst: (gstin) => `GSTIN：${gstin}。`,
     looking: (interest) => `我正在寻找：${interest}。`,
+    quantity: (quantity) => `预计数量：${quantity}。`,
     details: (details) => `详细信息：${details}`,
     request: "请提供目前可选产品和价格。"
   },
   ur: {
     product: (product) => `السلام علیکم Supreme Cycle، مجھے ${product} کے بارے میں معلومات چاہیے۔ دستیاب برانڈ، سائز، تھوک مقدار اور موجودہ قیمت بتائیں۔`,
     hello: (name) => `السلام علیکم Supreme Cycle، میرا نام ${name} ہے۔`,
+    buyer: (buyerType) => `خریدار کی قسم: ${buyerType}۔`,
+    business: (business) => `کاروبار / فرم: ${business}۔`,
+    state: (state) => `ڈیلیوری ریاست / علاقہ: ${state}۔`,
+    gst: (gstin) => `GSTIN: ${gstin}۔`,
     looking: (interest) => `مجھے چاہیے: ${interest}۔`,
+    quantity: (quantity) => `اندازاً مقدار: ${quantity}۔`,
     details: (details) => `تفصیلات: ${details}`,
     request: "براہِ کرم موجودہ اختیارات اور قیمتیں بتائیں۔"
   },
   te: {
     product: (product) => `నమస్తే Supreme Cycle, నాకు ${product} గురించి సమాచారం కావాలి. అందుబాటులో ఉన్న బ్రాండ్లు, సైజులు, హోల్‌సేల్ పరిమాణం మరియు ప్రస్తుత ధర తెలియజేయండి.`,
     hello: (name) => `నమస్తే Supreme Cycle, నా పేరు ${name}.`,
+    buyer: (buyerType) => `కొనుగోలుదారు రకం: ${buyerType}.`,
+    business: (business) => `వ్యాపారం / సంస్థ: ${business}.`,
+    state: (state) => `డెలివరీ రాష్ట్రం / ప్రాంతం: ${state}.`,
+    gst: (gstin) => `GSTIN: ${gstin}.`,
     looking: (interest) => `నాకు కావాల్సింది: ${interest}.`,
+    quantity: (quantity) => `అంచనా పరిమాణం: ${quantity}.`,
     details: (details) => `వివరాలు: ${details}`,
     request: "ప్రస్తుత ఎంపికలు మరియు ధరలు తెలియజేయండి."
   },
   ta: {
     product: (product) => `வணக்கம் Supreme Cycle, ${product} பற்றி விசாரிக்க விரும்புகிறேன். கிடைக்கும் பிராண்டுகள், அளவுகள், மொத்த அளவு மற்றும் தற்போதைய விலையைப் பகிரவும்.`,
     hello: (name) => `வணக்கம் Supreme Cycle, என் பெயர் ${name}.`,
+    buyer: (buyerType) => `வாங்குபவர் வகை: ${buyerType}.`,
+    business: (business) => `வணிகம் / நிறுவனம்: ${business}.`,
+    state: (state) => `டெலிவரி மாநிலம் / பகுதி: ${state}.`,
+    gst: (gstin) => `GSTIN: ${gstin}.`,
     looking: (interest) => `நான் தேடுவது: ${interest}.`,
+    quantity: (quantity) => `தோராயமான அளவு: ${quantity}.`,
     details: (details) => `விவரங்கள்: ${details}`,
     request: "தற்போதைய விருப்பங்கள் மற்றும் விலைகளைப் பகிரவும்."
   },
   kn: {
     product: (product) => `ನಮಸ್ಕಾರ Supreme Cycle, ನನಗೆ ${product} ಕುರಿತು ಮಾಹಿತಿ ಬೇಕು. ಲಭ್ಯವಿರುವ ಬ್ರಾಂಡ್‌ಗಳು, ಗಾತ್ರಗಳು, ಸಗಟು ಪ್ರಮಾಣ ಮತ್ತು ಪ್ರಸ್ತುತ ಬೆಲೆ ತಿಳಿಸಿ.`,
     hello: (name) => `ನಮಸ್ಕಾರ Supreme Cycle, ನನ್ನ ಹೆಸರು ${name}.`,
+    buyer: (buyerType) => `ಖರೀದಿದಾರರ ಪ್ರಕಾರ: ${buyerType}.`,
+    business: (business) => `ವ್ಯಾಪಾರ / ಸಂಸ್ಥೆ: ${business}.`,
+    state: (state) => `ವಿತರಣೆ ರಾಜ್ಯ / ಪ್ರದೇಶ: ${state}.`,
+    gst: (gstin) => `GSTIN: ${gstin}.`,
     looking: (interest) => `ನಾನು ಹುಡುಕುತ್ತಿರುವುದು: ${interest}.`,
+    quantity: (quantity) => `ಅಂದಾಜು ಪ್ರಮಾಣ: ${quantity}.`,
     details: (details) => `ವಿವರಗಳು: ${details}`,
     request: "ಪ್ರಸ್ತುತ ಆಯ್ಕೆಗಳು ಮತ್ತು ಬೆಲೆಗಳನ್ನು ತಿಳಿಸಿ."
   }
@@ -311,23 +346,34 @@ form?.addEventListener("submit", (event) => {
 
   if (!form.checkValidity()) {
     form.reportValidity();
-    formStatus.textContent = copyFor(currentLanguage).formValidation || "Please add your name and choose a category.";
+    formStatus.textContent = copyFor(currentLanguage).formValidation || "Please complete all required fields.";
     return;
   }
 
   const data = new FormData(form);
   const name = String(data.get("name") || "").trim();
+  const business = String(data.get("business") || "").trim();
+  const buyerType = String(data.get("buyerType") || "").trim();
+  const selectedBuyerType = form.elements.buyerType.selectedOptions[0]?.textContent.trim() || buyerType;
+  const state = String(data.get("state") || "").trim();
+  const gstin = String(data.get("gstin") || "").trim();
   const interest = String(data.get("interest") || "").trim();
   const selectedInterest = form.elements.interest.selectedOptions[0]?.textContent.trim() || interest;
+  const quantity = String(data.get("quantity") || "").trim();
   const details = String(data.get("message") || "").trim();
   const templates = messageTemplates[currentLanguage] || messageTemplates.en;
   const lines = [
     templates.hello(name),
+    templates.buyer(selectedBuyerType),
+    business ? templates.business(business) : null,
+    templates.state(state),
     templates.looking(selectedInterest),
+    quantity ? templates.quantity(quantity) : null,
+    gstin ? templates.gst(gstin) : null,
     details ? templates.details(details) : templates.request
-  ];
+  ].filter(Boolean);
 
-  const whatsappNumber = interest === "Wholesale bicycle parts" ? "917888898988" : "919839850588";
+  const whatsappNumber = buyerType === "Individual retail customer" ? "919839850588" : "917888898988";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
   formStatus.textContent = copyFor(currentLanguage).openingWhatsapp || "Opening WhatsApp…";
   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
