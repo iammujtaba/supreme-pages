@@ -72,6 +72,7 @@ const html = await readFile(path.join(site, "index.html"), "utf8");
 const css = await readFile(path.join(site, "styles.css"), "utf8");
 const js = await readFile(path.join(site, "script.js"), "utf8");
 const translationsSource = await readFile(path.join(site, "translations.js"), "utf8");
+const buildJs = await readFile(path.join(root, "scripts", "build.mjs"), "utf8");
 const translationContext = { window: {} };
 vm.runInNewContext(translationsSource, translationContext);
 const i18n = translationContext.window.SUPREME_I18N;
@@ -132,7 +133,9 @@ const checks = [
   [js.includes("wa.me/917888898988"), "wholesale WhatsApp integration"],
   [js.includes("activateCatalogTab"), "supplier category tabs"],
   [js.includes("supremePreferredLanguage"), "saved language preference"],
-  [js.includes("messageTemplates"), "localized WhatsApp messages"]
+  [js.includes("messageTemplates"), "localized WhatsApp messages"],
+  [buildJs.includes('createHash("sha256")'), "content-hashed asset versions"],
+  [buildJs.includes('versionedAssets = ["styles.css", "translations.js", "script.js"]'), "critical asset cache busting"]
 ];
 
 const failures = checks.filter(([ok]) => !ok).map(([, name]) => name);
