@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://supremecycle.in/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://supremecycle.in/og.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://supremecycle.in/gallery/</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-01.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-02.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-03.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-04.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-05.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-06.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-07.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-08.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-09.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-10.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-11.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-12.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-13.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-14.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-15.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-16.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-17.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-18.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-19.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-20.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-21.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-22.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-23.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-24.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-25.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-26.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-27.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-28.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-29.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-30.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-31.jpg</image:loc></image:image>
+    <image:image><image:loc>https://supremecycle.in/gallery/images/supreme-gallery-32.jpg</image:loc></image:image>
   </url>
 </urlset>

@@ -11,22 +11,44 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(source, output, { recursive: true });
 
-const versionedAssets = ["styles.css", "translations.js", "script.js"];
-const indexPath = path.join(output, "index.html");
-let html = await readFile(indexPath, "utf8");
+const pages = [
+  {
+    file: "index.html",
+    assets: [
+      { file: "styles.css", url: "styles.css" },
+      { file: "translations.js", url: "translations.js" },
+      { file: "script.js", url: "script.js" }
+    ]
+  },
+  {
+    file: "gallery/index.html",
+    assets: [
+      { file: "styles.css", url: "../styles.css" },
+      { file: "translations.js", url: "../translations.js" },
+      { file: "script.js", url: "../script.js" },
+      { file: "gallery/gallery.css", url: "gallery.css" },
+      { file: "gallery/gallery.js", url: "gallery.js" }
+    ]
+  }
+];
 
-for (const asset of versionedAssets) {
-  const contents = await readFile(path.join(output, asset));
-  const version = createHash("sha256").update(contents).digest("hex").slice(0, 12);
-  html = html
-    .replaceAll(`href="${asset}"`, `href="${asset}?v=${version}"`)
-    .replaceAll(`src="${asset}"`, `src="${asset}?v=${version}"`);
+for (const page of pages) {
+  const pagePath = path.join(output, page.file);
+  let html = await readFile(pagePath, "utf8");
+
+  for (const asset of page.assets) {
+    const contents = await readFile(path.join(output, asset.file));
+    const version = createHash("sha256").update(contents).digest("hex").slice(0, 12);
+    html = html
+      .replaceAll(`href="${asset.url}"`, `href="${asset.url}?v=${version}"`)
+      .replaceAll(`src="${asset.url}"`, `src="${asset.url}?v=${version}"`);
+  }
+
+  if (page.assets.some((asset) => !html.includes(`${asset.url}?v=`))) {
+    throw new Error(`Build failed to add versioned URLs to ${page.file}.`);
+  }
+
+  await writeFile(pagePath, html, "utf8");
 }
 
-await writeFile(indexPath, html, "utf8");
-
-if (versionedAssets.some((asset) => !html.includes(`${asset}?v=`))) {
-  throw new Error("Build failed to add versioned URLs for critical assets.");
-}
-
-console.log("Built static site in dist/ with versioned CSS and JavaScript URLs.");
+console.log("Built static site in dist/ with versioned CSS and JavaScript URLs for all pages.");

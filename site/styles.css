@@ -2151,7 +2151,7 @@ html[lang^="kn"] body {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1040px) {
   .announcement__note {
     display: none;
   }
