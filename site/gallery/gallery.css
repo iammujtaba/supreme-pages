@@ -8,7 +8,7 @@
   padding: clamp(76px, 9vw, 124px) 0 clamp(78px, 9vw, 118px);
   color: var(--cream);
   background:
-    radial-gradient(circle at 8% 16%, rgba(235, 94, 40, 0.28) 0 1px, transparent 2px) 0 0 / 19px 19px,
+    radial-gradient(circle at 8% 16%, rgba(230, 184, 63, 0.28) 0 1px, transparent 2px) 0 0 / 19px 19px,
     linear-gradient(135deg, var(--green-2), var(--green));
 }
 
@@ -44,7 +44,7 @@
 }
 
 .gallery-hero__copy h1 em {
-  color: #ffb28f;
+  color: #e6b83f;
   font-weight: inherit;
 }
 
@@ -132,10 +132,10 @@
   display: grid;
   place-content: center;
   color: var(--green-2);
-  background: var(--orange);
+  background: var(--gold);
   border: 5px solid var(--green-2);
   border-radius: 50%;
-  box-shadow: 0 0 0 3px var(--orange);
+  box-shadow: 0 0 0 3px var(--gold);
   text-align: center;
   transform: rotate(-7deg);
 }
@@ -162,7 +162,7 @@
 .gallery-section {
   padding: clamp(76px, 9vw, 124px) 0;
   background:
-    radial-gradient(circle at 4% 7%, rgba(235, 94, 40, 0.12) 0 1px, transparent 2px) 0 0 / 20px 20px,
+    radial-gradient(circle at 4% 7%, rgba(230, 184, 63, 0.12) 0 1px, transparent 2px) 0 0 / 20px 20px,
     var(--ivory);
 }
 
@@ -348,7 +348,7 @@
 }
 
 .gallery-lightbox button:hover {
-  background: var(--orange);
+  background: var(--gold);
   transform: scale(1.06);
 }
 
