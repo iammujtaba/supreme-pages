@@ -12,6 +12,7 @@ const requiredFiles = [
   "script.js",
   "translations.js",
   "og.png",
+  "og-forest-gold.png",
   "wholesale-parts-banner.png",
   "favicon.ico",
   "favicon.svg",
