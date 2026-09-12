@@ -1631,5 +1631,11 @@
     Object.assign(translations[language], { tabDrivetrain, dealerEyebrow, dealerTitle });
   }
 
+  const wheelPartsLabels = { hi: 'पहिए के पुर्जे', zh: '车轮零件', ur: 'پہیے کے پرزے', te: 'చక్రాల భాగాలు', ta: 'சக்கர பாகங்கள்', kn: 'ಚಕ್ರದ ಭಾಗಗಳು' };
+  for (const [language, label] of Object.entries(wheelPartsLabels)) {
+    translations[language].tabWheelParts = label;
+    productTypes[language]['Wheel parts'] = label;
+  }
+
   window.SUPREME_I18N = { languages, gate, translations, productTypes };
 })();
