@@ -200,8 +200,9 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="storefront.css">
 </head>
-<body>
+<body class="storefront">
   <div class="language-gate" id="language-gate" role="dialog" aria-modal="true" aria-labelledby="language-gate-title" aria-describedby="language-gate-description">
     <div class="language-gate__card">
       <div class="language-gate__brand" aria-hidden="true">
@@ -255,7 +256,7 @@
 
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
         <a href="#wholesale" data-i18n="navWholesale">Wholesale</a>
-        <a href="#featured-products" data-i18n="navProducts">Products</a>
+        <a href="catalogue/" data-i18n="navProducts">Products</a>
         <a href="gallery/" data-i18n="navGallery">Gallery</a>
         <a href="#ordering" data-i18n="navOrdering">How to order</a>
         <a href="#visit" data-i18n="navVisit">Visit</a>
@@ -300,9 +301,9 @@
           </div>
         </div>
 
-        <div class="hero__visual reveal" aria-label="Supreme Cycle brand poster">
-          <div class="poster-frame">
-            <img src="og-forest-gold.png" width="1734" height="907" alt="Illustrated Supreme Cycle poster featuring a bicycle and cycle rickshaw" fetchpriority="high" decoding="async">
+        <div class="hero__visual reveal" aria-label="SCRC bicycle collection">
+          <div class="poster-frame ride-frame">
+            <img src="products/scrc-international.jpg" width="1280" height="956" alt="SCRC International bicycle" fetchpriority="high" decoding="async">
           </div>
           <div class="availability-card">
             <span class="availability-card__dot" aria-hidden="true"></span>
@@ -323,6 +324,18 @@
         <span data-i18n="marqueeService">Retail support in Khalilabad</span><i aria-hidden="true"></i>
       </div>
     </section>
+
+    <section class="section browse-home" id="featured-products">
+      <div class="shell">
+        <div class="browse-heading"><div><p class="kicker">THE SUPREME COLLECTION</p><h2>Find your next ride.<br>Or its next upgrade.</h2></div><p>Explore by category, discover your brand, or browse the complete range. Our team is a message away.</p></div>
+        <div class="category-grid"><!-- CATEGORY_CARDS --></div>
+      </div>
+    </section>
+    <section class="section brand-section" id="brands"><div class="shell">
+      <div class="browse-heading"><div><p class="kicker">FAMILIAR NAMES. ONE PLACE.</p><h2>Shop by brand.</h2></div><p>Browse the brands currently listed in our catalogue.</p></div>
+      <div class="brand-grid"><!-- BRAND_CARDS --></div>
+      <a class="catalogue-banner" href="catalogue/"><span><small>EVERY PRODUCT, EASY TO FIND</small><strong>View full catalogue</strong></span><span aria-hidden="true">↗</span></a>
+    </div></section>
 
     <section class="section wholesale" id="wholesale">
       <div class="shell wholesale__grid">
@@ -404,261 +417,6 @@
         <div class="dealer-documents__grid">
           <figure><a href="products/bedrock-dealership.jpg" target="_blank" rel="noreferrer"><img src="products/bedrock-dealership.jpg" width="837" height="837" alt="Bedrock authorised dealer certificate for Supreme Cycle, Khalilabad" loading="lazy"></a><figcaption>Bedrock</figcaption></figure>
           <figure><a href="products/ralco-dealership.jpg" target="_blank" rel="noreferrer"><img src="products/ralco-dealership.jpg" width="844" height="844" alt="Ralco dealership certificate issued to Supreme Cycle, Khalilabad" loading="lazy"></a><figcaption>Ralco</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section product-showcase" id="featured-products">
-      <div class="shell">
-        <div class="section-heading product-showcase__heading reveal">
-          <div>
-            <p class="eyebrow"><span></span> <span data-i18n="catalogEyebrow">Supplier product range</span></p>
-            <h2 data-i18n="catalogTitle">Explore products by category.</h2>
-          </div>
-          <p data-i18n="catalogDescription">Choose a category to view selected models. Packing, MOQ, colours and current wholesale prices are confirmed by our sales team.</p>
-        </div>
-
-        <div class="catalog-tabs reveal" role="tablist" aria-label="Product categories">
-          <button class="catalog-tab is-active" id="catalog-tab-cables" type="button" role="tab" aria-selected="true" aria-controls="catalog-panel-cables" tabindex="0" data-catalog-tab="cables"><span data-i18n="tabCables">Cables</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-pumps" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-pumps" tabindex="-1" data-catalog-tab="pumps"><span data-i18n="tabPumps">Pumps</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-saddles" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-saddles" tabindex="-1" data-catalog-tab="saddles"><span data-i18n="tabSaddles">Saddles</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-axles" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-axles" tabindex="-1" data-catalog-tab="axles"><span data-i18n="tabAxles">Axles &amp; BB</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-drivetrain" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-drivetrain" tabindex="-1" data-catalog-tab="drivetrain"><span data-i18n="tabDrivetrain">Chains &amp; Freewheels</span> <span>2</span></button>
-          <button class="catalog-tab" id="catalog-tab-accessories" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-accessories" tabindex="-1" data-catalog-tab="accessories"><span data-i18n="tabAccessories">Accessories</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-tyres" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-tyres" tabindex="-1" data-catalog-tab="tyres"><span data-i18n="tabTyres">Tyres</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-tubes" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-tubes" tabindex="-1" data-catalog-tab="tubes"><span data-i18n="tabTubes">Tubes</span> <span>1</span></button>
-          <button class="catalog-tab" id="catalog-tab-other" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-other" tabindex="-1" data-catalog-tab="other"><span data-i18n="tabOther">Other Parts</span> <span>4</span></button>
-          <button class="catalog-tab" id="catalog-tab-kids" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel-kids" tabindex="-1" data-catalog-tab="kids"><span data-i18n="tabKids">Kids Cycles</span> <span>14</span></button>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-cables" role="tabpanel" aria-labelledby="catalog-tab-cables" data-catalog-panel="cables">
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/woven-brake-cable.jpg" width="360" height="360" alt="Woven pattern bicycle brake cable" loading="lazy" decoding="async"><span>YM015</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle cables</p><h3>Woven Pattern Brake Cable</h3><p>Woven outer cover for smooth brake operation and a distinctive finish.</p><button type="button" class="product-enquiry" data-product="Woven Pattern Brake Cable (YM015)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/cable-ym014.jpg" width="360" height="360" alt="Zebra colour bicycle brake cable" loading="lazy" decoding="async"><span>YM014</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle cables</p><h3>Zebra Colour Brake Cable</h3><p>Patterned brake cable set for standard bicycle braking applications.</p><button type="button" class="product-enquiry" data-product="Zebra Colour Brake Cable (YM014)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/cable-ym013.jpg" width="360" height="360" alt="Lazer finish bicycle brake cable" loading="lazy" decoding="async"><span>YM013</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle cables</p><h3>Lazer Finish Brake Cable</h3><p>Bright finished outer cable with inner wire for wholesale supply.</p><button type="button" class="product-enquiry" data-product="Lazer Finish Brake Cable (YM013)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/cable-ym012.jpg" width="360" height="360" alt="Vintage style bicycle brake cable" loading="lazy" decoding="async"><span>YM012</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle cables</p><h3>Vintage Brake Cable</h3><p>Classic cable style suitable for roadster and utility bicycle ranges.</p><button type="button" class="product-enquiry" data-product="Vintage Bicycle Brake Cable (YM012)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-pumps" role="tabpanel" aria-labelledby="catalog-tab-pumps" data-catalog-panel="pumps" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/pump-ym146.jpg" width="360" height="360" alt="Powder coated heavy duty bicycle pump" loading="lazy" decoding="async"><span>YM146</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle pumps</p><h3>45 mm Powder-coated Pump</h3><p>Heavy-duty barrel pump with a durable powder-coated body.</p><button type="button" class="product-enquiry" data-product="45 mm Powder-coated Bicycle Pump (YM146)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/pump-ym147.jpg" width="360" height="360" alt="Heavy duty 45 millimetre bicycle pump" loading="lazy" decoding="async"><span>YM147</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle pumps</p><h3>Heavy-duty 45 mm Pump</h3><p>Full-size manual bicycle pump designed for regular workshop use.</p><button type="button" class="product-enquiry" data-product="Heavy-duty 45 mm Bicycle Pump (YM147)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/pump-ym103.jpg" width="360" height="360" alt="Bicycle inflator pump with cloth hose" loading="lazy" decoding="async"><span>YM103</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle pumps</p><h3>Cloth-hose Inflator Pump</h3><p>Traditional hand pump supplied with a flexible cloth-covered connection.</p><button type="button" class="product-enquiry" data-product="Cloth-hose Bicycle Inflator Pump (YM103)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/pump-ym114.jpg" width="360" height="360" alt="Long barrel bicycle air pump" loading="lazy" decoding="async"><span>YM114</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle pumps</p><h3>35 × 570 mm Air Pump</h3><p>Long-barrel manual air pump for bicycle and general inflation use.</p><button type="button" class="product-enquiry" data-product="35 x 570 mm Bicycle Air Pump (YM114)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-saddles" role="tabpanel" aria-labelledby="catalog-tab-saddles" data-catalog-panel="saddles" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/saddle-ym833.jpg" width="360" height="360" alt="Comfort bicycle saddle for men" loading="lazy" decoding="async"><span>YM833</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle saddles</p><h3>Comfort Bicycle Seat</h3><p>Broad everyday saddle shaped for comfortable commuting and utility rides.</p><button type="button" class="product-enquiry" data-product="Comfort Bicycle Seat (YM833)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/saddle-ym832.jpg" width="360" height="360" alt="Bicycle saddle with LED rear light" loading="lazy" decoding="async"><span>YM832</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle saddles</p><h3>LED Rear-light Saddle</h3><p>Comfort saddle with an integrated rear visibility light.</p><button type="button" class="product-enquiry" data-product="LED Rear-light Bicycle Saddle (YM832)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/saddle-ym831.jpg" width="360" height="360" alt="Hollow bicycle saddle with suspension balls" loading="lazy" decoding="async"><span>YM831</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle saddles</p><h3>Suspension Ball Saddle</h3><p>Ventilated saddle with twin suspension balls for added cushioning.</p><button type="button" class="product-enquiry" data-product="Suspension Ball Bicycle Saddle (YM831)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/saddle-ym818.jpg" width="360" height="360" alt="Classic wide bicycle saddle" loading="lazy" decoding="async"><span>YM818</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle saddles</p><h3>Classic Wide Saddle</h3><p>Wide-profile seat for roadster, city and everyday bicycles.</p><button type="button" class="product-enquiry" data-product="Classic Wide Bicycle Saddle (YM818)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-axles" role="tabpanel" aria-labelledby="catalog-tab-axles" data-catalog-panel="axles" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/axle-ym307.jpg" width="360" height="360" alt="Bicycle bottom bracket axle with cups" loading="lazy" decoding="async"><span>YM307</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Axles &amp; bottom brackets</p><h3>Bottom Bracket with Cups</h3><p>Complete bottom-bracket axle and cup assembly for compatible frames.</p><button type="button" class="product-enquiry" data-product="Bicycle Bottom Bracket with Cups (YM307)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/axle-ym303-cups.jpg" width="360" height="360" alt="Bicycle BB axle with bearing cups" loading="lazy" decoding="async"><span>YM303</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Axles &amp; bottom brackets</p><h3>BB Axle with Cups</h3><p>Steel bottom-bracket axle set supplied with matching cups.</p><button type="button" class="product-enquiry" data-product="Bicycle BB Axle with Cups (YM303)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/axle-ym303-set.jpg" width="360" height="360" alt="B-type bicycle BB axle set" loading="lazy" decoding="async"><span>YM303</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Axles &amp; bottom brackets</p><h3>B-type BB Axle Set</h3><p>Bottom-bracket axle component set for standard bicycle assembly.</p><button type="button" class="product-enquiry" data-product="B-type Bicycle BB Axle Set (YM303)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/axle-ym309.jpg" width="360" height="360" alt="Sealed bicycle cartridge bottom bracket" loading="lazy" decoding="async"><span>YM309</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Axles &amp; bottom brackets</p><h3>Cartridge Bottom Bracket</h3><p>Sealed cartridge-style bottom bracket for compatible bicycle frames.</p><button type="button" class="product-enquiry" data-product="Bicycle Cartridge Bottom Bracket (YM309)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-drivetrain" role="tabpanel" aria-labelledby="catalog-tab-drivetrain" data-catalog-panel="drivetrain" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image product-photo-card__image--landscape-pack"><img src="products/masco-chain.jpg" width="960" height="720" alt="Masco Cycle Chain product packaging" loading="lazy" decoding="async"><span>MASCO</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle drivetrain</p><h3>Masco Cycle Chain</h3><p>Masco bicycle chain. Contact us to confirm sizes, packing and current wholesale availability.</p><button type="button" class="product-enquiry" data-product="Masco Cycle Chain">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image product-photo-card__image--landscape-pack"><img src="products/masco-freewheel.jpg" width="960" height="720" alt="Masco Freewheel product packaging" loading="lazy" decoding="async"><span>MASCO</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle drivetrain</p><h3>Masco Freewheel</h3><p>Masco freewheel for cycle drivetrain requirements. Confirm tooth count and compatibility before ordering.</p><button type="button" class="product-enquiry" data-product="Masco Freewheel">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-accessories" role="tabpanel" aria-labelledby="catalog-tab-accessories" data-catalog-panel="accessories" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/steel-basket.jpg" width="360" height="360" alt="Stainless steel wire bicycle basket" loading="lazy" decoding="async"><span>YM203</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle accessories</p><h3>Stainless-steel Wire Basket</h3><p>Corrosion-resistant wire basket for city and utility bicycles.</p><button type="button" class="product-enquiry" data-product="Stainless-steel Wire Bicycle Basket (YM203)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/basket-ym201.jpg" width="360" height="360" alt="Front bicycle basket" loading="lazy" decoding="async"><span>YM201</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle accessories</p><h3>Front Bicycle Basket</h3><p>Practical front-mount basket for carrying everyday items.</p><button type="button" class="product-enquiry" data-product="Front Bicycle Basket (YM201)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/basket-ym214.jpg" width="360" height="360" alt="Bicycle rear basket and carrier" loading="lazy" decoding="async"><span>YM214</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle accessories</p><h3>Rear Basket / Carrier</h3><p>Rear-mounted basket design for compatible commuter bicycles.</p><button type="button" class="product-enquiry" data-product="Bicycle Rear Basket and Carrier (YM214)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/basket-ym213.jpg" width="360" height="360" alt="Extra large electric bicycle basket" loading="lazy" decoding="async"><span>YM213</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle accessories</p><h3>Extra-large E-bike Basket</h3><p>High-capacity basket for electric, delivery and utility bicycles.</p><button type="button" class="product-enquiry" data-product="Extra-large Electric Bicycle Basket (YM213)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-tyres" role="tabpanel" aria-labelledby="catalog-tab-tyres" data-catalog-panel="tyres" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/tyre-bedrock-city-rider.jpg" width="350" height="350" alt="Bedrock City Rider bicycle tyre" loading="lazy" decoding="async"><span>BEDROCK</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">City / urban tyre</p><h3>Bedrock City Rider</h3><p>Closely spaced urban tread for smooth rolling on everyday road routes.</p><button type="button" class="product-enquiry" data-product="Bedrock City Rider Bicycle Tyre">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/tyre-bedrock-fighter.jpg" width="350" height="350" alt="Bedrock Fighter mountain bicycle tyre" loading="lazy" decoding="async"><span>BEDROCK</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">MTB tyre</p><h3>Bedrock Fighter</h3><p>Chunky tread blocks designed for stronger grip on mixed and rough surfaces.</p><button type="button" class="product-enquiry" data-product="Bedrock Fighter MTB Bicycle Tyre">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/tyre-ralson-tuf-grip.png" width="600" height="600" alt="Ralson Tuf Grip bicycle tyre" loading="lazy" decoding="async"><span>RALSON</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">E-bike / road tyre</p><h3>Ralson Tuf Grip</h3><p>Versatile tread profile for dependable grip, comfort and everyday mileage.</p><button type="button" class="product-enquiry" data-product="Ralson Tuf Grip Bicycle Tyre (R-2152)">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image product-photo-card__image--dark"><img src="products/tyre-hindustan-storm.jpg" width="450" height="450" alt="Hindustan Storm bicycle tyre" loading="lazy" decoding="async"><span>HINDUSTAN</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Bicycle tyre</p><h3>Hindustan Storm</h3><p>Classic full-wheel tyre design from Hindustan's bicycle tyre range.</p><button type="button" class="product-enquiry" data-product="Hindustan Storm Bicycle Tyre">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-tubes" role="tabpanel" aria-labelledby="catalog-tab-tubes" data-catalog-panel="tubes" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image "><img src="products/bedrock-moulded.jpg" width="960" height="720" alt="Bedrock Moulded Golden Supreme Rickshaw Tube product packaging" loading="lazy" decoding="async"><span>BEDROCK</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Moulded tube</p><h3>Bedrock Moulded Golden Supreme Rickshaw Tube</h3><p>Bedrock Moulded Golden Supreme rickshaw tube. Ask for available sizes, packing and wholesale prices.</p><button type="button" class="product-enquiry" data-product="Bedrock Moulded Golden Supreme Rickshaw Tube">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-other" role="tabpanel" aria-labelledby="catalog-tab-other" data-catalog-panel="other" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image "><img src="products/hatora-brake-shoe.jpg" width="960" height="720" alt="Hatora Brake Shoe product packaging" loading="lazy" decoding="async"><span>HATORA</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Brake fittings</p><h3>Hatora Brake Shoe</h3><p>Hatora brake shoe with rubber, PH type. Contact us for fitting details, packing and wholesale quantities.</p><button type="button" class="product-enquiry" data-product="Hatora Brake Shoe">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/other-bottle-carrier-bush.jpg" width="360" height="360" alt="Bicycle bottle and carrier mounting bushes" loading="lazy" decoding="async"><span>YM1108</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Frame fittings</p><h3>Bottle &amp; Carrier Bush</h3><p>Threaded mounting bushes for compatible bottle cages and carriers.</p><button type="button" class="product-enquiry" data-product="Bicycle Bottle and Carrier Bush (YM1108)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/other-bmx-vbrake-bolt.jpg" width="360" height="360" alt="BMX bicycle V-brake pivot bolt" loading="lazy" decoding="async"><span>YM1105</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Brake fittings</p><h3>BMX V-brake Pivot Bolt</h3><p>Weld-on pivot fitting for compatible BMX and bicycle brake frames.</p><button type="button" class="product-enquiry" data-product="BMX V-brake Pivot Bolt (YM1105)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/other-vbrake-pivot-bolts.jpg" width="360" height="360" alt="Bicycle V-brake pivot bolt fitting" loading="lazy" decoding="async"><span>YM1103</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Brake fittings</p><h3>V-brake Pivot Bolt</h3><p>Steel brake pivot component for compatible bicycle frame production.</p><button type="button" class="product-enquiry" data-product="Bicycle V-brake Pivot Bolt (YM1103)">Get wholesale price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
-        </div>
-
-        <div class="catalog-panel" id="catalog-panel-kids" role="tabpanel" aria-labelledby="catalog-tab-kids" data-catalog-panel="kids" hidden>
-          <div class="product-photo-grid">
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-terminator-5g.jpg" width="1280" height="898" alt="Terminator 5G Trike Bike" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Terminator 5G Trike Bike</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="Terminator 5G Trike Bike">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-terminator-6g.jpg" width="1280" height="898" alt="Terminator 6G Trike Bike" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Terminator 6G Trike Bike</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="Terminator 6G Trike Bike">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-rafel.jpg" width="1280" height="898" alt="Rafel Metallic Edition" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Rafel Metallic Edition</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="Rafel Metallic Edition">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image product-photo-card__image--portrait-cycle"><img src="products/scrc-supreme-20.jpg" width="649" height="1280" alt="SCRC Supreme 20" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">SCRC · Kids bicycles</p><h3>SCRC Supreme 20</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="SCRC Supreme 20">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/scrc-international.jpg" width="1280" height="956" alt="SCRC International" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">SCRC · Kids bicycles</p><h3>SCRC International</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="SCRC International">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-bullet-bw-tricycle.jpg" width="1280" height="898" alt="Red and black Bullet Tricycle B/W" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Bullet Tricycle B/W</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="JMD Bullet Tricycle B/W">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-trump-tricycle.jpg" width="1280" height="898" alt="Red and black Trump kids tricycle" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Trump Kids Tricycle</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="JMD Trump Kids Tricycle">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-harvey-tricycle.jpg" width="1280" height="898" alt="Purple and black Harvey tricycle" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Harvey Tricycle</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="JMD Harvey Tricycle">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-hexa-tricycle.jpg" width="1280" height="898" alt="Blue and black Hexa tricycle" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Hexa Tricycle</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="JMD Hexa Tricycle">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/jmd-nexa-tricycle.jpg" width="1280" height="898" alt="Grey and black Nexa tricycle" loading="lazy" decoding="async"></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">JMD International · Kids tricycles</p><h3>Nexa Tricycle</h3><p>Ask for current price, available colours and product details.</p><button type="button" class="product-enquiry" data-product="JMD Nexa Tricycle">Check availability &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/kids-cycle-ym2101.jpg" width="360" height="360" alt="Kids bicycle for young children" loading="lazy" decoding="async"><span>YM2101</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Children bicycles</p><h3>Kids Bicycle</h3><p>Colourful children's cycle range; ask for available sizes and colours.</p><button type="button" class="product-enquiry" data-product="Kids Bicycle (YM2101)">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/kids-alloy-cycle.jpg" width="360" height="360" alt="Kids bicycle with alloy-style wheels" loading="lazy" decoding="async"><span>YM2102</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Children bicycles</p><h3>Alloy-wheel Kids Cycle</h3><p>Sporty children's bicycle style with training-wheel options.</p><button type="button" class="product-enquiry" data-product="Alloy-wheel Kids Cycle (YM2102)">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/kids-cycle-ym2103.jpg" width="360" height="360" alt="Children bicycle for girls" loading="lazy" decoding="async"><span>YM2103</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Children bicycles</p><h3>Girls' Children Bicycle</h3><p>Brightly styled children's bicycle with size and colour choices.</p><button type="button" class="product-enquiry" data-product="Girls' Children Bicycle (YM2103)">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-            <article class="product-photo-card reveal">
-              <div class="product-photo-card__image"><img src="products/kids-cycle-ym2104.jpg" width="360" height="360" alt="Popular children bicycle model" loading="lazy" decoding="async"><span>YM2104</span></div>
-              <div class="product-photo-card__body"><p class="product-photo-card__type">Children bicycles</p><h3>Popular Kids Cycle</h3><p>Everyday children's cycle option for wholesale size assortments.</p><button type="button" class="product-enquiry" data-product="Popular Kids Cycle (YM2104)">Check sizes &amp; price <span aria-hidden="true">&nearr;</span></button></div>
-            </article>
-          </div>
         </div>
       </div>
     </section>

@@ -1,0 +1,943 @@
+{
+  "categories": [
+    {
+      "id": "bicycles",
+      "name": "Bicycles",
+      "image": "products/scrc-international.jpg",
+      "text": "Everyday rides. Dependable companions."
+    },
+    {
+      "id": "kids",
+      "name": "Kids Cycles & Tricycles",
+      "image": "products/jmd-hexa-tricycle.jpg",
+      "text": "Small wheels. Big adventures."
+    },
+    {
+      "id": "parts",
+      "name": "Bicycle Parts",
+      "image": "products/kw/chains/k-w-bicycle-chain.jpg",
+      "text": "The essentials that keep you moving."
+    },
+    {
+      "id": "tyres-tubes",
+      "name": "Tyres & Tubes",
+      "image": "products/tyre-bedrock-city-rider.jpg",
+      "text": "A better grip on every journey."
+    },
+    {
+      "id": "accessories",
+      "name": "Cycle Accessories",
+      "image": "products/steel-basket.jpg",
+      "text": "Practical additions for every ride."
+    }
+  ],
+  "products": [
+    {
+      "id": "woven-brake-cable",
+      "name": "Woven Pattern Brake Cable",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Brake Cable",
+      "image": "products/woven-brake-cable.jpg",
+      "images": [
+        "products/woven-brake-cable.jpg"
+      ],
+      "reference": "Woven Pattern Brake Cable (YM015)"
+    },
+    {
+      "id": "cable-ym014",
+      "name": "Zebra Colour Brake Cable",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Brake Cable",
+      "image": "products/cable-ym014.jpg",
+      "images": [
+        "products/cable-ym014.jpg"
+      ],
+      "reference": "Zebra Colour Brake Cable (YM014)"
+    },
+    {
+      "id": "cable-ym013",
+      "name": "Lazer Finish Brake Cable",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Brake Cable",
+      "image": "products/cable-ym013.jpg",
+      "images": [
+        "products/cable-ym013.jpg"
+      ],
+      "reference": "Lazer Finish Brake Cable (YM013)"
+    },
+    {
+      "id": "cable-ym012",
+      "name": "Vintage Brake Cable",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Brake Cable",
+      "image": "products/cable-ym012.jpg",
+      "images": [
+        "products/cable-ym012.jpg"
+      ],
+      "reference": "Vintage Bicycle Brake Cable (YM012)"
+    },
+    {
+      "id": "pump-ym146",
+      "name": "45 mm Powder-coated Pump",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Pump",
+      "image": "products/pump-ym146.jpg",
+      "images": [
+        "products/pump-ym146.jpg"
+      ],
+      "reference": "45 mm Powder-coated Bicycle Pump (YM146)"
+    },
+    {
+      "id": "pump-ym147",
+      "name": "Heavy-duty 45 mm Pump",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Pump",
+      "image": "products/pump-ym147.jpg",
+      "images": [
+        "products/pump-ym147.jpg"
+      ],
+      "reference": "Heavy-duty 45 mm Bicycle Pump (YM147)"
+    },
+    {
+      "id": "pump-ym103",
+      "name": "Cloth-hose Inflator Pump",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Pump",
+      "image": "products/pump-ym103.jpg",
+      "images": [
+        "products/pump-ym103.jpg"
+      ],
+      "reference": "Cloth-hose Bicycle Inflator Pump (YM103)"
+    },
+    {
+      "id": "pump-ym114",
+      "name": "35 × 570 mm Air Pump",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Pump",
+      "image": "products/pump-ym114.jpg",
+      "images": [
+        "products/pump-ym114.jpg"
+      ],
+      "reference": "35 x 570 mm Bicycle Air Pump (YM114)"
+    },
+    {
+      "id": "saddle-ym833",
+      "name": "Comfort Bicycle Seat",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/saddle-ym833.jpg",
+      "images": [
+        "products/saddle-ym833.jpg"
+      ],
+      "reference": "Comfort Bicycle Seat (YM833)"
+    },
+    {
+      "id": "saddle-ym832",
+      "name": "LED Rear-light Saddle",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/saddle-ym832.jpg",
+      "images": [
+        "products/saddle-ym832.jpg"
+      ],
+      "reference": "LED Rear-light Bicycle Saddle (YM832)"
+    },
+    {
+      "id": "saddle-ym831",
+      "name": "Suspension Ball Saddle",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/saddle-ym831.jpg",
+      "images": [
+        "products/saddle-ym831.jpg"
+      ],
+      "reference": "Suspension Ball Bicycle Saddle (YM831)"
+    },
+    {
+      "id": "saddle-ym818",
+      "name": "Classic Wide Saddle",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/saddle-ym818.jpg",
+      "images": [
+        "products/saddle-ym818.jpg"
+      ],
+      "reference": "Classic Wide Bicycle Saddle (YM818)"
+    },
+    {
+      "id": "axle-ym307",
+      "name": "Bottom Bracket with Cups",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "BB Set",
+      "image": "products/axle-ym307.jpg",
+      "images": [
+        "products/axle-ym307.jpg"
+      ],
+      "reference": "Bicycle Bottom Bracket with Cups (YM307)"
+    },
+    {
+      "id": "axle-ym303-cups",
+      "name": "BB Axle with Cups",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "BB Set",
+      "image": "products/axle-ym303-cups.jpg",
+      "images": [
+        "products/axle-ym303-cups.jpg"
+      ],
+      "reference": "Bicycle BB Axle with Cups (YM303)"
+    },
+    {
+      "id": "axle-ym303-set",
+      "name": "B-type BB Axle Set",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "BB Set",
+      "image": "products/axle-ym303-set.jpg",
+      "images": [
+        "products/axle-ym303-set.jpg"
+      ],
+      "reference": "B-type Bicycle BB Axle Set (YM303)"
+    },
+    {
+      "id": "axle-ym309",
+      "name": "Cartridge Bottom Bracket",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "BB Set",
+      "image": "products/axle-ym309.jpg",
+      "images": [
+        "products/axle-ym309.jpg"
+      ],
+      "reference": "Bicycle Cartridge Bottom Bracket (YM309)"
+    },
+    {
+      "id": "masco-chain",
+      "name": "Masco Cycle Chain",
+      "brand": "Masco",
+      "category": "parts",
+      "type": "Chain",
+      "image": "products/masco-chain.jpg",
+      "images": [
+        "products/masco-chain.jpg"
+      ],
+      "reference": "Masco Cycle Chain"
+    },
+    {
+      "id": "masco-freewheel",
+      "name": "Masco Freewheel",
+      "brand": "Masco",
+      "category": "parts",
+      "type": "Freewheel",
+      "image": "products/masco-freewheel.jpg",
+      "images": [
+        "products/masco-freewheel.jpg"
+      ],
+      "reference": "Masco Freewheel"
+    },
+    {
+      "id": "steel-basket",
+      "name": "Stainless-steel Wire Basket",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Basket",
+      "image": "products/steel-basket.jpg",
+      "images": [
+        "products/steel-basket.jpg"
+      ],
+      "reference": "Stainless-steel Wire Bicycle Basket (YM203)"
+    },
+    {
+      "id": "basket-ym201",
+      "name": "Front Bicycle Basket",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Basket",
+      "image": "products/basket-ym201.jpg",
+      "images": [
+        "products/basket-ym201.jpg"
+      ],
+      "reference": "Front Bicycle Basket (YM201)"
+    },
+    {
+      "id": "basket-ym214",
+      "name": "Rear Basket / Carrier",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Basket",
+      "image": "products/basket-ym214.jpg",
+      "images": [
+        "products/basket-ym214.jpg"
+      ],
+      "reference": "Bicycle Rear Basket and Carrier (YM214)"
+    },
+    {
+      "id": "basket-ym213",
+      "name": "Extra-large E-bike Basket",
+      "brand": "SCRC",
+      "category": "accessories",
+      "type": "Basket",
+      "image": "products/basket-ym213.jpg",
+      "images": [
+        "products/basket-ym213.jpg"
+      ],
+      "reference": "Extra-large Electric Bicycle Basket (YM213)"
+    },
+    {
+      "id": "tyre-bedrock-city-rider",
+      "name": "Bedrock City Rider",
+      "brand": "Bedrock",
+      "category": "tyres-tubes",
+      "type": "Tyre",
+      "image": "products/tyre-bedrock-city-rider.jpg",
+      "images": [
+        "products/tyre-bedrock-city-rider.jpg"
+      ],
+      "reference": "Bedrock City Rider Bicycle Tyre"
+    },
+    {
+      "id": "tyre-bedrock-fighter",
+      "name": "Bedrock Fighter",
+      "brand": "Bedrock",
+      "category": "tyres-tubes",
+      "type": "Tyre",
+      "image": "products/tyre-bedrock-fighter.jpg",
+      "images": [
+        "products/tyre-bedrock-fighter.jpg"
+      ],
+      "reference": "Bedrock Fighter MTB Bicycle Tyre"
+    },
+    {
+      "id": "tyre-ralson-tuf-grip",
+      "name": "Ralson Tuf Grip",
+      "brand": "Ralson",
+      "category": "tyres-tubes",
+      "type": "Tyre",
+      "image": "products/tyre-ralson-tuf-grip.png",
+      "images": [
+        "products/tyre-ralson-tuf-grip.png"
+      ],
+      "reference": "Ralson Tuf Grip Bicycle Tyre (R-2152)"
+    },
+    {
+      "id": "tyre-hindustan-storm",
+      "name": "Hindustan Storm",
+      "brand": "Hindustan",
+      "category": "tyres-tubes",
+      "type": "Tyre",
+      "image": "products/tyre-hindustan-storm.jpg",
+      "images": [
+        "products/tyre-hindustan-storm.jpg"
+      ],
+      "reference": "Hindustan Storm Bicycle Tyre"
+    },
+    {
+      "id": "bedrock-moulded",
+      "name": "Bedrock Moulded Golden Supreme Rickshaw Tube",
+      "brand": "Bedrock",
+      "category": "tyres-tubes",
+      "type": "Tube",
+      "image": "products/bedrock-moulded.jpg",
+      "images": [
+        "products/bedrock-moulded.jpg"
+      ],
+      "reference": "Bedrock Moulded Golden Supreme Rickshaw Tube"
+    },
+    {
+      "id": "hatora-brake-shoe",
+      "name": "Hatora Brake Shoe",
+      "brand": "Hatora",
+      "category": "parts",
+      "type": "Brake Shoe",
+      "image": "products/hatora-brake-shoe.jpg",
+      "images": [
+        "products/hatora-brake-shoe.jpg"
+      ],
+      "reference": "Hatora Brake Shoe"
+    },
+    {
+      "id": "other-bottle-carrier-bush",
+      "name": "Bottle & Carrier Bush",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Bush",
+      "image": "products/other-bottle-carrier-bush.jpg",
+      "images": [
+        "products/other-bottle-carrier-bush.jpg"
+      ],
+      "reference": "Bicycle Bottle and Carrier Bush (YM1108)"
+    },
+    {
+      "id": "other-bmx-vbrake-bolt",
+      "name": "BMX V-brake Pivot Bolt",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Brake Bolt",
+      "image": "products/other-bmx-vbrake-bolt.jpg",
+      "images": [
+        "products/other-bmx-vbrake-bolt.jpg"
+      ],
+      "reference": "BMX V-brake Pivot Bolt (YM1105)"
+    },
+    {
+      "id": "other-vbrake-pivot-bolts",
+      "name": "V-brake Pivot Bolt",
+      "brand": "SCRC",
+      "category": "parts",
+      "type": "Brake Bolt",
+      "image": "products/other-vbrake-pivot-bolts.jpg",
+      "images": [
+        "products/other-vbrake-pivot-bolts.jpg"
+      ],
+      "reference": "Bicycle V-brake Pivot Bolt (YM1103)"
+    },
+    {
+      "id": "jmd-terminator-5g",
+      "name": "Terminator 5G Trike Bike",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-terminator-5g.jpg",
+      "images": [
+        "products/jmd-terminator-5g.jpg"
+      ],
+      "reference": "Terminator 5G Trike Bike"
+    },
+    {
+      "id": "jmd-terminator-6g",
+      "name": "Terminator 6G Trike Bike",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-terminator-6g.jpg",
+      "images": [
+        "products/jmd-terminator-6g.jpg"
+      ],
+      "reference": "Terminator 6G Trike Bike"
+    },
+    {
+      "id": "jmd-rafel",
+      "name": "Rafel Metallic Edition",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-rafel.jpg",
+      "images": [
+        "products/jmd-rafel.jpg"
+      ],
+      "reference": "Rafel Metallic Edition"
+    },
+    {
+      "id": "scrc-supreme-20",
+      "name": "SCRC Supreme 20",
+      "brand": "SCRC",
+      "category": "kids",
+      "type": "Kids Bicycle",
+      "image": "products/scrc-supreme-20.jpg",
+      "images": [
+        "products/scrc-supreme-20.jpg"
+      ],
+      "reference": "SCRC Supreme 20",
+      "imageFit": "cover"
+    },
+    {
+      "id": "scrc-international",
+      "name": "SCRC International",
+      "brand": "SCRC",
+      "category": "bicycles",
+      "type": "Bicycle",
+      "image": "products/scrc-international.jpg",
+      "images": [
+        "products/scrc-international.jpg"
+      ],
+      "reference": "SCRC International"
+    },
+    {
+      "id": "jmd-bullet-bw-tricycle",
+      "name": "Bullet Tricycle B/W",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-bullet-bw-tricycle.jpg",
+      "images": [
+        "products/jmd-bullet-bw-tricycle.jpg"
+      ],
+      "reference": "JMD Bullet Tricycle B/W"
+    },
+    {
+      "id": "jmd-trump-tricycle",
+      "name": "Trump Kids Tricycle",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-trump-tricycle.jpg",
+      "images": [
+        "products/jmd-trump-tricycle.jpg"
+      ],
+      "reference": "JMD Trump Kids Tricycle"
+    },
+    {
+      "id": "jmd-harvey-tricycle",
+      "name": "Harvey Tricycle",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-harvey-tricycle.jpg",
+      "images": [
+        "products/jmd-harvey-tricycle.jpg"
+      ],
+      "reference": "JMD Harvey Tricycle"
+    },
+    {
+      "id": "jmd-hexa-tricycle",
+      "name": "Hexa Tricycle",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-hexa-tricycle.jpg",
+      "images": [
+        "products/jmd-hexa-tricycle.jpg"
+      ],
+      "reference": "JMD Hexa Tricycle"
+    },
+    {
+      "id": "jmd-nexa-tricycle",
+      "name": "Nexa Tricycle",
+      "brand": "JMD",
+      "category": "kids",
+      "type": "Tricycle",
+      "image": "products/jmd-nexa-tricycle.jpg",
+      "images": [
+        "products/jmd-nexa-tricycle.jpg"
+      ],
+      "reference": "JMD Nexa Tricycle"
+    },
+    {
+      "id": "kids-cycle-ym2101",
+      "name": "Kids Bicycle",
+      "brand": "SCRC",
+      "category": "kids",
+      "type": "Kids Bicycle",
+      "image": "products/kids-cycle-ym2101.jpg",
+      "images": [
+        "products/kids-cycle-ym2101.jpg"
+      ],
+      "reference": "Kids Bicycle (YM2101)"
+    },
+    {
+      "id": "kids-alloy-cycle",
+      "name": "Alloy-wheel Kids Cycle",
+      "brand": "SCRC",
+      "category": "kids",
+      "type": "Kids Bicycle",
+      "image": "products/kids-alloy-cycle.jpg",
+      "images": [
+        "products/kids-alloy-cycle.jpg"
+      ],
+      "reference": "Alloy-wheel Kids Cycle (YM2102)"
+    },
+    {
+      "id": "kids-cycle-ym2103",
+      "name": "Girls' Children Bicycle",
+      "brand": "SCRC",
+      "category": "kids",
+      "type": "Kids Bicycle",
+      "image": "products/kids-cycle-ym2103.jpg",
+      "images": [
+        "products/kids-cycle-ym2103.jpg"
+      ],
+      "reference": "Girls' Children Bicycle (YM2103)"
+    },
+    {
+      "id": "kids-cycle-ym2104",
+      "name": "Popular Kids Cycle",
+      "brand": "SCRC",
+      "category": "kids",
+      "type": "Kids Bicycle",
+      "image": "products/kids-cycle-ym2104.jpg",
+      "images": [
+        "products/kids-cycle-ym2104.jpg"
+      ],
+      "reference": "Popular Kids Cycle (YM2104)"
+    },
+    {
+      "id": "kw-b-b-fitting",
+      "name": "B.B Fitting",
+      "brand": "KW",
+      "category": "parts",
+      "type": "BB Set",
+      "image": "products/kw/b-b-fitting/b-b-fitting.jpg",
+      "images": [
+        "products/kw/b-b-fitting/b-b-fitting.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/b-b-fitting/"
+    },
+    {
+      "id": "kw-handle-bar-ph-type-rl-type-2",
+      "name": "Chain Cover",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Chain Cover",
+      "image": "products/kw/chain-cover/handle-bar-ph-type-rl-type-2.jpg",
+      "images": [
+        "products/kw/chain-cover/handle-bar-ph-type-rl-type-2.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/handle-bar-ph-type-rl-type-2/"
+    },
+    {
+      "id": "kw-chain-cover",
+      "name": "Chain Cover",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Chain Cover",
+      "image": "products/kw/chain-cover/chain-cover.jpg",
+      "images": [
+        "products/kw/chain-cover/chain-cover.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/chain-cover/"
+    },
+    {
+      "id": "kw-chain-cover-2",
+      "name": "Chain Cover",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Chain Cover",
+      "image": "products/kw/chain-cover/chain-cover-2.jpg",
+      "images": [
+        "products/kw/chain-cover/chain-cover-2.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/chain-cover-2/"
+    },
+    {
+      "id": "kw-k-w-bicycle-chain",
+      "name": "K.W Bicycle Chain",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Chain",
+      "image": "products/kw/chains/k-w-bicycle-chain.jpg",
+      "images": [
+        "products/kw/chains/k-w-bicycle-chain.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-bicycle-chain/"
+    },
+    {
+      "id": "kw-k-w-deluxe-chain-2",
+      "name": "K.W Deluxe Chain",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Chain",
+      "image": "products/kw/chains/k-w-deluxe-chain-2.jpg",
+      "images": [
+        "products/kw/chains/k-w-deluxe-chain-2.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-deluxe-chain-2/"
+    },
+    {
+      "id": "kw-fabest-single-blue-sofa",
+      "name": "Frame Ph Type / RL Type",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/fabest-single-blue-sofa.jpg",
+      "images": [
+        "products/kw/frames/fabest-single-blue-sofa.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/fabest-single-blue-sofa/"
+    },
+    {
+      "id": "kw-frame-double-bar-ph-type",
+      "name": "Frame Double Bar PH/Type",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/frame-double-bar-ph-type.jpg",
+      "images": [
+        "products/kw/frames/frame-double-bar-ph-type.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/frame-double-bar-ph-type/"
+    },
+    {
+      "id": "kw-frame-5-bar-ph-type",
+      "name": "Frame 5 Bar PH/Type",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/frame-5-bar-ph-type.jpg",
+      "images": [
+        "products/kw/frames/frame-5-bar-ph-type.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/frame-5-bar-ph-type/"
+    },
+    {
+      "id": "kw-frame-curved-bar-lady",
+      "name": "Frame Curved Bar",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/frame-curved-bar-lady.jpg",
+      "images": [
+        "products/kw/frames/frame-curved-bar-lady.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/frame-curved-bar-lady/"
+    },
+    {
+      "id": "kw-frame-parallel-bar-lady",
+      "name": "Frame Parallel Bar",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/frame-parallel-bar-lady.jpg",
+      "images": [
+        "products/kw/frames/frame-parallel-bar-lady.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/frame-parallel-bar-lady/"
+    },
+    {
+      "id": "kw-k-w-bicycle-frame-9-bar",
+      "name": "K.W Bicycle Frame 9 Bar",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/k-w-bicycle-frame-9-bar.jpg",
+      "images": [
+        "products/kw/frames/k-w-bicycle-frame-9-bar.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-bicycle-frame-9-bar/"
+    },
+    {
+      "id": "kw-k-w-bicycle-frame-12-bar",
+      "name": "K.W Bicycle Frame 12 Bar",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Frame",
+      "image": "products/kw/frames/k-w-bicycle-frame-12-bar.jpg",
+      "images": [
+        "products/kw/frames/k-w-bicycle-frame-12-bar.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-bicycle-frame-12-bar/"
+    },
+    {
+      "id": "kw-handle-bar-nr-type",
+      "name": "Handle Bar NR / Type",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Handle",
+      "image": "products/kw/handles/handle-bar-nr-type.jpg",
+      "images": [
+        "products/kw/handles/handle-bar-nr-type.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/handle-bar-nr-type/"
+    },
+    {
+      "id": "kw-handle-bar-ph-type-rl-type",
+      "name": "Handle Bar PH / Type & (RL / Type)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Handle",
+      "image": "products/kw/handles/handle-bar-ph-type-rl-type.jpg",
+      "images": [
+        "products/kw/handles/handle-bar-ph-type-rl-type.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/handle-bar-ph-type-rl-type/"
+    },
+    {
+      "id": "kw-mudguard-angle-type-bcp-n-model",
+      "name": "Mudguard Angle Type BCP (N. Model)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Mudguard",
+      "image": "products/kw/mudguard/mudguard-angle-type-bcp-n-model.jpg",
+      "images": [
+        "products/kw/mudguard/mudguard-angle-type-bcp-n-model.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/mudguard-angle-type-bcp-n-model/"
+    },
+    {
+      "id": "kw-mudguard-mtb-bmx-type-u-type",
+      "name": "Mudguard MTB, BMX Type (U Type)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Mudguard",
+      "image": "products/kw/mudguard/mudguard-mtb-bmx-type-u-type.jpg",
+      "images": [
+        "products/kw/mudguard/mudguard-mtb-bmx-type-u-type.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/mudguard-mtb-bmx-type-u-type/"
+    },
+    {
+      "id": "kw-mudguard-ph-type",
+      "name": "Mudguard PH / Type",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Mudguard",
+      "image": "products/kw/mudguard/mudguard-ph-type.jpg",
+      "images": [
+        "products/kw/mudguard/mudguard-ph-type.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/mudguard-ph-type/"
+    },
+    {
+      "id": "kw-mudguard-ph-type-bcp",
+      "name": "Mudguard PH/Type BCP",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Mudguard",
+      "image": "products/kw/mudguard/mudguard-ph-type-bcp.jpg",
+      "images": [
+        "products/kw/mudguard/mudguard-ph-type-bcp.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/mudguard-ph-type-bcp/"
+    },
+    {
+      "id": "kw-k-w-v-spring-05",
+      "name": "K.W  V-Spring 05",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-v-spring-05.jpg",
+      "images": [
+        "products/kw/saddles/k-w-v-spring-05.jpg",
+        "products/kw/saddles/k-w-v-spring-05-2.jpg",
+        "products/kw/saddles/k-w-v-spring-05-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-v-spring-05/"
+    },
+    {
+      "id": "kw-k-w-2k-pu",
+      "name": "K.W 2K (PU)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-2k-pu.jpg",
+      "images": [
+        "products/kw/saddles/k-w-2k-pu.jpg",
+        "products/kw/saddles/k-w-2k-pu-2.jpg",
+        "products/kw/saddles/k-w-2k-pu-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-2k-pu/"
+    },
+    {
+      "id": "kw-k-w-4k-color-pu",
+      "name": "K.W 4K Color (PU)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-4k-color-pu.jpg",
+      "images": [
+        "products/kw/saddles/k-w-4k-color-pu.jpg",
+        "products/kw/saddles/k-w-4k-color-pu-2.jpg",
+        "products/kw/saddles/k-w-4k-color-pu-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-4k-color-pu/"
+    },
+    {
+      "id": "kw-k-w-4k-pvc-top-pu",
+      "name": "K.W 4K PVC Top (PU)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-4k-pvc-top-pu.jpg",
+      "images": [
+        "products/kw/saddles/k-w-4k-pvc-top-pu.jpg",
+        "products/kw/saddles/k-w-4k-pvc-top-pu-2.jpg",
+        "products/kw/saddles/k-w-4k-pvc-top-pu-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-4k-pvc-top-pu/"
+    },
+    {
+      "id": "kw-k-w-5k-pu",
+      "name": "K.W 5K (PU)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-5k-pu.jpg",
+      "images": [
+        "products/kw/saddles/k-w-5k-pu.jpg",
+        "products/kw/saddles/k-w-5k-pu-2.jpg",
+        "products/kw/saddles/k-w-5k-pu-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-5k-pu/"
+    },
+    {
+      "id": "kw-k-w-6k-lb",
+      "name": "K.W 6K LB",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-6k-lb.jpg",
+      "images": [
+        "products/kw/saddles/k-w-6k-lb.jpg",
+        "products/kw/saddles/k-w-6k-lb-2.jpg",
+        "products/kw/saddles/k-w-6k-lb-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-6k-lb/"
+    },
+    {
+      "id": "kw-k-w-6k-mtm",
+      "name": "K.W 6K MTB",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-6k-mtm.jpg",
+      "images": [
+        "products/kw/saddles/k-w-6k-mtm.jpg",
+        "products/kw/saddles/k-w-6k-mtm-2.jpg",
+        "products/kw/saddles/k-w-6k-mtm-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-6k-mtm/"
+    },
+    {
+      "id": "kw-k-w-comfo",
+      "name": "K.W Comfo",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-comfo.jpg",
+      "images": [
+        "products/kw/saddles/k-w-comfo.jpg",
+        "products/kw/saddles/k-w-comfo-2.jpg",
+        "products/kw/saddles/k-w-comfo-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-comfo/"
+    },
+    {
+      "id": "kw-k-w-rzr-pu",
+      "name": "K.W RZR (PU)",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/k-w-rzr-pu.jpg",
+      "images": [
+        "products/kw/saddles/k-w-rzr-pu.jpg",
+        "products/kw/saddles/k-w-rzr-pu-2.jpg",
+        "products/kw/saddles/k-w-rzr-pu-3.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/k-w-rzr-pu/"
+    },
+    {
+      "id": "kw-release-leather-pvc-top",
+      "name": "Release Leather / PVC Top",
+      "brand": "KW",
+      "category": "parts",
+      "type": "Saddle",
+      "image": "products/kw/saddles/release-leather-pvc-top.jpg",
+      "images": [
+        "products/kw/saddles/release-leather-pvc-top.jpg"
+      ],
+      "source": "https://www.kwcycles.com/product/release-leather-pvc-top/"
+    }
+  ]
+}

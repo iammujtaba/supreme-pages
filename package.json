@@ -5,7 +5,7 @@
   "description": "Static storefront for Supreme Cycle & Rickshaw Company, Khalilabad.",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/validate.mjs"
+    "test": "node scripts/validate.mjs && node scripts/validate-catalogue.mjs"
   },
   "engines": {
     "node": ">=20"

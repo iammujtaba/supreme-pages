@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { renderCatalogue } from './catalogue.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = path.join(root, "site");
@@ -10,19 +11,36 @@ const output = path.join(root, "dist");
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(source, output, { recursive: true });
+const catalogue = JSON.parse(await readFile(path.join(source, 'catalogue-data.json'), 'utf8'));
+for (const [file, page] of [['index.html','home'], ['catalogue/index.html','catalogue']]) {
+  const html = await readFile(path.join(output,file),'utf8');
+  await writeFile(path.join(output,file),renderCatalogue(html,catalogue,page));
+}
 
 const pages = [
   {
     file: "index.html",
     assets: [
       { file: "styles.css", url: "styles.css" },
+      { file: "storefront.css", url: "storefront.css" },
       { file: "translations.js", url: "translations.js" },
       { file: "script.js", url: "script.js" }
     ]
   },
   {
+    file: "catalogue/index.html",
+    assets: [
+      { file: "styles.css", url: "../styles.css" },
+      { file: "storefront.css", url: "../storefront.css" },
+      { file: "translations.js", url: "../translations.js" },
+      { file: "script.js", url: "../script.js" },
+      { file: "catalogue/catalogue.js", url: "catalogue.js" }
+    ]
+  },
+  {
     file: "gallery/index.html",
     assets: [
+      { file: "storefront.css", url: "../storefront.css" },
       { file: "styles.css", url: "../styles.css" },
       { file: "translations.js", url: "../translations.js" },
       { file: "script.js", url: "../script.js" },
