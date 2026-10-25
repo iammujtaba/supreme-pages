@@ -4,7 +4,7 @@
 .storefront .site-header { background:rgba(250,250,245,.98); }
 .storefront .announcement { background:#123c2e; color:#f5f2df; }
 .storefront .hero { background:#e8ecdf; padding:72px 0 56px; min-height:0; }
-.storefront .hero__grid { grid-template-columns:1.05fr 1fr; gap:48px; align-items:center; }
+.storefront .hero__grid { grid-template-columns:1fr; gap:0; align-items:center; }
 .storefront .hero h1 { font-size:clamp(36px,4.5vw,66px); line-height:1.07; letter-spacing:-2px; max-width:700px; }
 .storefront .hero__lead { font-size:16px; max-width:600px; }
 .storefront .hero h1,.storefront .hero__trust strong { color:#183b30; }
@@ -54,7 +54,12 @@
 .storefront .button--outline-light { color:#183b30; border-color:#8b9a85; }
 .storefront .dealer-documents { padding-top:20px; }
 .storefront .dealer-documents img { height:180px; }
-.storefront .ordering { background:#fff; }
+.storefront .ordering { background:#fff; color:#183b30; }
+.storefront .ordering__heading h2,.storefront .ordering-step h3 { color:#183b30; }
+.storefront .ordering__heading > p,.storefront .ordering-step p,.storefront .ordering__action p { color:#435c47; }
+.storefront .ordering-step { background:#f7f7f2; border-color:#dce2d6; }
+.storefront .ordering-step > span { color:#7f6424; }
+.storefront .ordering__action { border-color:#dce2d6; }
 .storefront .network-card { box-shadow:none; border:1px solid #dce2d6; }
 .catalogue-intro { padding-top:48px; padding-bottom:44px; }
 .back-link { display:inline-block; font-size:13px; margin-bottom:28px; color:#687761; }
