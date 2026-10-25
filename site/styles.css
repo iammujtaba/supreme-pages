@@ -2765,6 +2765,7 @@ html[lang^="kn"] body {
 .dealer-documents img { width: 100%; height: 300px; object-fit: contain; }
 .dealer-documents figcaption { margin-top: 12px; color: var(--green); font-weight: 800; text-align: center; }
 .product-photo-card__image img { position: absolute; inset: 0; padding: 12px; }
+.product-photo-card__image--portrait-cycle img { object-fit: cover; }
 .product-photo-card__image--landscape-pack img,
 .product-photo-card:hover .product-photo-card__image--landscape-pack img {
   inset: auto; left: 50%; top: 50%; width: 83.333%; height: 120%;
