@@ -50,6 +50,7 @@
 .storefront .wholesale__copy { max-width:100%; }
 .storefront .wholesale__copy h2 { max-width:850px; font-size:clamp(28px,3vw,42px); }
 .storefront .wholesale__copy p,.storefront .wholesale-points,.storefront .eyebrow--light { color:#435c47; }
+.storefront .wholesale .wholesale-points li { color:#183b30; }
 .storefront .brand-strip,.storefront .business-ids { display:none; }
 .storefront .button--outline-light { color:#183b30; border-color:#8b9a85; }
 .storefront .dealer-documents { padding-top:20px; }
