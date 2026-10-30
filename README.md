@@ -6,7 +6,7 @@ A fast, accessible static website for the Khalilabad bicycle store, ready for Gi
 
 ## Product catalogue
 
-Edit `site/catalogue-data.json` to maintain products. Each product has a stable `id`, `name`, `brand`, broad `category`, item `type`, a main `image`, and optional alternate `images` and source URL. Unbranded listings are assigned to SCRC per the owner's instruction. Known brands are retained; there are no prices, size selectors, cart, or checkout.
+Edit `site/catalogue-data.json` to maintain products. Each product has a stable `id`, `name`, `brand`, broad `category`, item `type`, a main `image`, and optional alternate `images` and source URL. All 29 SCRC listings (including formerly unbranded products) were removed at the owner's request. The remaining 45 products retain their brands; empty categories are not listed. Original image assets are retained for recovery. There are no prices, size selectors, cart, or checkout.
 
 The build renders category and brand links on the homepage and a separate `/catalogue/` page from the same data. Filters are combined (AND) and preserved in shareable query parameters: `category`, `type`, `brand`, `q`. Item types depend on the selected category. Static cards and WhatsApp links remain available without JavaScript.
 

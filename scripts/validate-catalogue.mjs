@@ -5,8 +5,10 @@ import path from 'node:path';
 import { renderCatalogue } from './catalogue.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..','site');
 const data = JSON.parse(await readFile(path.join(root,'catalogue-data.json'),'utf8'));
-assert.equal(data.products.length,74);
-assert.equal(new Set(data.products.map(p=>p.id)).size,74,'unique stable IDs');
+assert.equal(data.products.length,45);
+assert.equal(new Set(data.products.map(p=>p.id)).size,45,'unique stable IDs');
+assert.ok(data.products.every(p=>p.brand!=='SCRC'),'SCRC listings removed');
+assert.ok(data.categories.every(c=>data.products.some(p=>p.category===c.id)),'no empty categories');
 assert.equal(data.products.filter(p=>p.brand==='KW').length,29);
 assert.equal(data.products.filter(p=>p.brand==='JMD').length,8);
 for (const product of data.products) {
@@ -17,15 +19,16 @@ for (const product of data.products) {
 }
 const template = await readFile(path.join(root,'catalogue/index.html'),'utf8');
 const html = renderCatalogue(template,data,'catalogue');
-assert.equal((html.match(/class="catalogue-card"/g)||[]).length,74);
-assert.equal((html.match(/class="enquire-link"/g)||[]).length,74);
+assert.equal((html.match(/class="catalogue-card"/g)||[]).length,45);
+assert.equal((html.match(/class="enquire-link"/g)||[]).length,45);
+assert.ok(!html.includes('data-brand="SCRC"') && !html.includes('value="SCRC"'));
 assert.ok(!html.includes('<!-- PRODUCT_CARDS -->'));
 assert.ok(!html.includes('size-filter'));
 assert.ok(html.includes('role="status"'));
 assert.ok(html.includes('id="empty-clear"'));
 for(const product of data.products) assert.ok(html.includes(encodeURIComponent('Product reference: '+product.id)));
 const home=renderCatalogue(await readFile(path.join(root,'index.html'),'utf8'),data,'home');
-assert.equal((home.match(/class="category-card /g)||[]).length,5);
-assert.ok(home.includes('catalogue/?brand=KW') && home.includes('catalogue/?brand=SCRC'));
+assert.equal((home.match(/class="category-card /g)||[]).length,3);
+assert.ok(home.includes('catalogue/?brand=KW') && !home.includes('catalogue/?brand=SCRC'));
 assert.ok(!home.includes('role="tabpanel"'),'homepage is no longer full catalogue');
-console.log('Validated 74 products, brand/category mappings, image paths, enquiry references and rendered catalogue.');
+console.log('Validated 45 products, no SCRC listings, brand/category mappings, image paths, enquiry references and rendered catalogue.');
